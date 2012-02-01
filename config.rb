@@ -1,3 +1,5 @@
+require 'slim'
+set :markdown, :layout_engine => :slim
 ### 
 # Compass
 ###
