@@ -14,52 +14,30 @@
   #container {
     padding: 1.618em;
     margin: 0 auto;
-    max-width: 60em; }
+    max-width: 60em; 
+  }
 
-  // header {
-  //   padding-bottom: 1em;
-  //   text-align: center;
+  header {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    p {
+      margin: 0 auto;
+      text-align: center;
+      max-width: 10em;} }
 
-  //   h1 {
-  //     font-size: 6em;
-  //     margin-bottom: 0.2em;
-  //   }
-  //   #tagline {
-  //     font-size: 1.5em;
-  //   }
-  // }
+  .column {
+    width: 18em;
+    padding: 1em;
+    float: left;
+  }
 
-  // .column {
-  //   float: left;
-  //   // width: 28em; 
-  //   width: 35em; 
-  //   padding: 1em;
-  // }
+  .homepage {
+    margin-top: 1em;
+    border: none; }
 
-  // .quote {
-  //   float: right;
-  //   text-align: right;
-  //   font-family: cursive;
-  //   width: 20em;
-  //   padding: 0, 0, 0.5em, 0.5em;
-  // }
-
-  // .sidebar {
-  //   float: left;
-  //   width: 20em;
-  //   padding: 1em;
-  // }
-
-  // .offer {
-  //   padding-bottom: 3em;
-  //   font-size: 1.5em;
-  // }
-
-  // .picture-column {
-  //   width: 19em;
-  //   float: left;
-  //   margin: 0.5em;
-  // }
+  .footnote {
+    max-width: 30em;
+    margin: 0 auto;}
 }
 
 /* 9. CUSTOM LAYOUT & TYPOGRAPHY (Mummy bear)

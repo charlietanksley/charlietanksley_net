@@ -181,6 +181,7 @@ footer {
   padding-top: 1em;
   margin: 0 auto;
   border-top: solid 1px $highlight;
+  clear: both;
 }
 
 .homepage {
@@ -205,3 +206,6 @@ footer {
   }
 
 }
+
+.centered {
+  text-align: center; }
