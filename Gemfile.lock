@@ -116,3 +116,4 @@ DEPENDENCIES
   middleman
   middleman-blog
   middleman-smusher
+  slim
