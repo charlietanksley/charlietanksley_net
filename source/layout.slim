@@ -35,11 +35,13 @@ html
   
   body id='container' class="#{page_classes} cf"
 
+    // Could I only show this if it exists?
     header
-      h1 Charlie Tanksley!
+      == yield_content :header
 
     div id="main" role="main"
       == yield
 
+    // Could I only show this if it exists?
     footer
-      p A Tanksley production!
+      == yield_content :footer

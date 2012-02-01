@@ -44,7 +44,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 html {
   overflow-y: scroll;
-  background: #FFF; }
+  background: $white; }
 
 /* /ht Ethan Marcotte - http://front.ie/l8rJaA */
 
@@ -62,7 +62,7 @@ body {
   font-family: $serif;
   font-size: 1em;
   line-height: 1.618em;
-  color: #333; }
+  color: $base-color; }
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.809em;
@@ -77,11 +77,13 @@ p, ul, ol, dl, blockquote {
   /* Optimal width for long-form text */ }
 
 ul {
-  list-style-type: disc;
+  // list-style-type: disc;
+  list-style-type: none;
   margin-left: 1.618em; }
 
 ol {
-  list-style-type: decimal;
+  // list-style-type: decimal;
+  list-style-type: none;
   margin-left: 1.618em; }
 
 nav {
@@ -104,11 +106,13 @@ small {
 
 a {
   outline: none;
-  color: #439BBD;
+  // color: #439BBD;
+  color: $link-color;
   text-decoration: underline;
   &:visited {
     outline: none;
-    color: #439BBD;
+    color: $visited-link;
+    // color: #439BBD;
     text-decoration: underline; }
   &:hover {
     outline: none;
@@ -144,3 +148,60 @@ aside {
 
 .ie6 .cf {
   zoom: 1; }
+
+
+/* MY ADDITIONS
+----------------------------------------------------------------------------------------*/
+
+header {
+  font-family: $decorative;
+  font-size: 2em;
+  font-weight: 800;
+  text-align: center;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 1px solid $highlight;
+  p {
+    line-height: 1em;
+    margin-bottom: 0;
+    margin-top: 0;}
+
+  h1 {
+    font-size: 2.2em;
+    font-family: $decorative;
+    margin-bottom: 0.1em;
+    color: $attention;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+footer {
+  padding-top: 1em;
+  margin: 0 auto;
+  border-top: solid 1px $highlight;
+}
+
+.homepage {
+  margin-top: 1em;
+  border-bottom: 1px solid $lighter;
+
+  h2 {
+    text-align: center;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+  ul {
+    text-align: center;
+    margin-left: 0;
+    li {
+      margin: 0;
+    }
+  }
+
+}

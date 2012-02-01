@@ -1,4 +1,46 @@
 - content_for :head do
-  title The Middleman!
+  title Charlie Tanksley
 
-h1 The Middleman is watching.
+- content_for :header do
+  p.lead-in Hi.  I'm<a name='top'></a>
+  h1 Charlie Tanksley.
+  p.remainder Much like Socrates, I'm something of a Spartain hound.<a href='#explanation'>*</a>
+  //p
+    span.hi Hi. I'm<a name='top'></a>
+    br
+    span.name
+      ' Charlie<br />
+      ' Tanksley.<br />
+    span.socrates Much like Socrates,
+    br
+    span I am something of a
+    br
+    span.hound Spartan hound<a href='#explanation'>*</a>
+
+section.column.homepage
+  h2 Philosophy
+  ul
+    li <a href='/pdfs/CV.pdf'>CV</a>
+
+section.column.homepage
+  h2 Technology
+  ul
+    li <a href='http://www.github.com/charlietanksley'>github/charlietanksley</a>
+    li <a href='/latex-guide.html'>Guide to LaTeX</a>
+    li <a href='http://www.charlietanksley.net/philtex'>PhilTeX</a>
+
+section.column.homepage
+  a name='connect'
+  h2 Contact
+  ul
+    li <a href='mailto:charlie.tanksley@gmail.com'>charlie.tanksley@gmail.com</a>
+    li <a href='http://www.twitter.com/charlietanksley'>@charlietanksley</a>
+
+- content_for :footer do
+  a name='explanation'
+  p * On the chance that you've forgotten your <i>Parmenides</i>, I'll remind you of what Zeno says to Socrates at 128c:
+  blockquote.parmenides
+    ' "Still, you haven't completely discerned the truth about my book, even though you chase down its arguments and follow their spoor as keenly as a young Spartan hound."
+  p Things don't end so well for Socrates in the <i>Parmenides</i> (or in life), and Zeno is paying him something of a backhanded complement here.  But I like it nonetheless.  Socrates <i>is</i> relentless in the pursuit of truth, even when he must know his view is about to be decimated (or he is to be put to death, as in the <i>Apology</i>).  I'm like that.  Or at least I try to be.
+  p
+    a href='#top' Return to top
