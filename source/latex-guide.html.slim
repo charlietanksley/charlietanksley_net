@@ -1,30 +1,30 @@
 - content_for :head do
   title LaTeX for Philosophers (and other Humanitarians)
 
-.page
-  header#header
-    h1 LaTeX for Philosophers
-    a name='#'
-    
-  .body
-    nav#site-nav
-      ul
-        li <a href='/'>Home</a>
-        li <a href='/#connect'>Connect</a>
-        li <a href='http://www.charlietanksley.net/philtex'>PhilTeX</a>
-    nav#page-nav
-      ol
-        li <a href='#intro' name='page-navigation'>Introduction</a>
-        li <a href='#why-latex'>Why use LaTeX</a>
-        li <a href='#get-latex'>Get a TeX distribution</a>
-        li <a href='#basics'>Write a basic document</a>
-        li <a href='#bibliography'>Write a bibliography</a>
-        li <a href='#customizing'>Make it your own</a>
-        li <a href='#pdf'>PDF version</a>
+header
+  h1 LaTeX for Philosophers
+  a name='#'
+  
+.body
+  nav#site-nav
+    ul
+      li <a href='/'>Home</a>
+      li <a href='/#connect'>Connect</a>
+      li <a href='http://www.charlietanksley.net/philtex'>PhilTeX</a>
+  nav#page-nav
+    ol
+      li <a href='#intro' name='page-navigation'>Introduction</a>
+      li <a href='#why-latex'>Why use LaTeX</a>
+      li <a href='#get-latex'>Get a TeX distribution</a>
+      li <a href='#basics'>Write a basic document</a>
+      li <a href='#bibliography'>Write a bibliography</a>
+      li <a href='#customizing'>Make it your own</a>
+      li <a href='#pdf'>PDF version</a>
 
 
-    .article
-      // INTRODUCTION {{{
+  .article
+    // INTRODUCTION {{{
+    section
       a name='intro'
       h2 Introduction
 
@@ -43,7 +43,8 @@
         
       a href='#page-navigation' Table of Contents
       // }}}
-      // WHY LATEX {{{
+    // WHY LATEX {{{
+    section
       a name='why-latex'
       h2 Why use LaTeX?
       markdown:
@@ -98,7 +99,8 @@
 
       a href='#page-navigation' Table of Contents
       // }}}
-      // GET LATEX {{{
+    // GET LATEX {{{
+    section
       a name='get-latex'
       h2 Get a TeX Distribution
       
@@ -144,8 +146,8 @@
 
       a href='#page-navigation' Table of Contents
       // }}}
-      // BASIC DOCUMENT {{{
-
+    // BASIC DOCUMENT {{{
+    section
       a name='basics'
       h2 Write a Basic LaTeX Document
       markdown:
@@ -294,8 +296,8 @@
 
       a href='#page-navigation' Table of Contents
       // }}}
-      // BIBLIOGRAPHY {{{
-
+    // BIBLIOGRAPHY {{{
+    section
       a name='bibliography'
       h2 Write a Bibliography
       markdown:
@@ -469,8 +471,9 @@
 
       a href='#page-navigation' Table of Contents
       // }}}
-      // CUSTOMIZING {{{
+    // CUSTOMIZING {{{
 
+    section
       a name='customizing'
       h2 Make it Your Own
       markdown:
@@ -705,12 +708,14 @@
 
       a href='#page-navigation' Table of Contents
       // }}}
-      // PDF {{{
+    // PDF {{{
+
+    section
       a name='pdf'
       h2 Read it offline
 
       p
-        If you'd like to have a PDF version of this guide for any reason, you can get one at
+        ' If you'd like to have a PDF version of this guide for any reason, you can get one at
         a href='/pdfs/latex-guide.pdf' http://www.charlietanksley.net/pdfs/latex-guide.pdf
       
       

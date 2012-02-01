@@ -101,6 +101,9 @@ i, em {
 small {
   font-size: 80%; }
 
+pre, code {
+  font-family: $monospace; }
+
 /* 4. LINKS
 ----------------------------------------------------------------------------------------*/
 
@@ -155,12 +158,13 @@ aside {
 
 header {
   font-family: $decorative;
-  font-size: 2em;
   font-weight: 800;
   text-align: center;
   padding-bottom: 1em;
   margin-bottom: 1em;
   border-bottom: 1px solid $highlight;
+  // font-size: 2em; 
+
   p {
     line-height: 1em;
     margin-bottom: 0;
@@ -176,6 +180,9 @@ header {
     text-decoration: none;
   }
 }
+
+header.splash {
+  font-size: 2em;}
 
 footer {
   padding-top: 1em;
@@ -207,5 +214,15 @@ footer {
 
 }
 
+pre {
+  border: 1px solid $highlight;
+  padding: 1em;
+  margin-bottom: 1em; }
+
 .centered {
   text-align: center; }
+
+
+section {
+  margin-bottom: 2em;
+}

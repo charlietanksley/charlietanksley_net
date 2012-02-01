@@ -4,4 +4,6 @@ gem 'middleman'
 gem 'middleman-smusher'
 gem 'middleman-blog'
 
+gem 'rb-fsevent'
+
 gem 'slim'

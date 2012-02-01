@@ -35,10 +35,6 @@ html
   
   body id='container' class="#{page_classes} cf"
 
-    // Could I only show this if it exists?
-    header
-      == yield_content :header
-
     div id="main" role="main"
       == yield
 
