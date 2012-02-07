@@ -38,7 +38,22 @@
   .footnote {
     max-width: 30em;
     margin: 0 auto;}
-}
+
+  .article {
+    width: 28em;
+    margin: 1em;
+    float: left; }
+
+  #page-nav {
+    float: right;
+    margin: 1em;
+    width: 28em;
+    ol {
+      float: none;
+      text-align: left;
+      border: none; } }
+    li {
+      padding: 0.5em 0 0.5em 0.5em; } }
 
 /* 9. CUSTOM LAYOUT & TYPOGRAPHY (Mummy bear)
 ----------------------------------------------------------------------------------------*/
@@ -64,4 +79,13 @@
   .footnote {
     max-width: 30em;
     margin: 0 auto;}
+
+  #page-nav {
+      width: 20em;
+      margin: 0 auto;
+      float: none;
+      clear: both;
+    ol {
+      text-align: center;
+      @include inline-list; } }
 }

@@ -243,11 +243,11 @@ section {
   ol {
     float: right;
     text-align: right;
+    margin: 0 0 0.5em 1em; 
     border-left: 1px dashed $highlight;
-    border-bottom: 1px dashed $highlight;
-    margin: 0 0 0 0; }
+    border-bottom: 1px dashed $highlight; }
   li {
-    padding: 0.5em; }
+    padding: 0.5em 0 0.5em 0.5em; }
   a {
     padding: 0.5em; }
 }
