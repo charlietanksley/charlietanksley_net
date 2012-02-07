@@ -1,4 +1,3 @@
-@import 'compass';
 @import 'base';
 /*
 Goldilocks Approach to Responsive Web Design Boilerplate
@@ -222,7 +221,27 @@ pre {
 .centered {
   text-align: center; }
 
-
 section {
   margin-bottom: 2em;
+}
+
+#site-nav {
+  text-align: center;
+  font-family: $sans;
+  font-size: 1.1em;
+  a {
+    padding: 1em; }
+}
+
+#page-nav {
+  ol {
+    float: right;
+    text-align: right;
+    border-left: 1px dashed $highlight;
+    border-bottom: 1px dashed $highlight;
+    margin: 0 0 0 0; }
+  li {
+    padding: 0.5em; }
+  a {
+    padding: 0.5em; }
 }
