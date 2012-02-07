@@ -1,5 +1,14 @@
 require 'slim'
+# require "redcarpet"
+
+# I'm bloging!
+activate :blog
+set :blog_permalink, "blog/:year/:title.html"
+set :blog_layout, "blog_layout"
+set :blog_layout_engine, "slim"
 set :markdown, :layout_engine => :slim
+# set :markdown_engine, :redcarpet
+
 ### 
 # Compass
 ###
@@ -9,9 +18,9 @@ set :markdown, :layout_engine => :slim
 # require 'susy'
 
 # Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+compass_config do |config|
+  config.output_style = :compact
+end
 
 ###
 # Haml

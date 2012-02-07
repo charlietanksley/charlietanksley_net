@@ -1,0 +1,70 @@
+doctype html
+
+/! ht Paul Irish - http://front.ie/j5OMXi
+/[if lt IE 7 ]
+  html class="no-js ie6" lang="en"
+/[if IE 7 ]
+  html class="no-js ie7" lang="en"
+/[if IE 8 ]
+  html class="no-js ie8" lang="en"
+/[if (gte IE 9)|!(IE)]
+  html class="no-js" lang="en"
+
+html
+  head
+    meta charset="utf-8"
+
+    title Charlie Tanksley
+    meta name='description' content="Charlie Tanksley's personal site"
+    meta name='author' content='Charlie Tanksley'
+
+
+    /! /ht Andy Clarke - http://front.ie/lkCwyf
+    meta http-equiv="cleartype" content="on"
+    meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+    /! /ht Jeremy Keith - http://front.ie/mLXiaS
+    /* == stylesheet_link_tag "site.css" */
+    == stylesheet_link_tag 'global.css'
+    == stylesheet_link_tag 'layout.css'
+
+    == javascript_include_tag 'modernizr-1.7.min'
+
+  body id='container' class="#{page_classes} cf"
+
+    div id="main" role="main"
+      header
+        h1 Charlie Tanksley
+
+      nav#site-nav
+        ul
+          li <a href='/'>Home</a>
+          li <a href='/#connect'>Connect</a>
+          li <a href='http://www.charlietanksley.net/philtex'>PhilTeX</a>
+
+      article.article
+        .publication-information
+          h1 = current_article_title
+          time = current_article_date.strftime('%b %e %Y')
+
+        == yield
+
+      // sidebar!
+      - if is_blog_article?
+        .sidebar
+          h2 Recent posts
+          ul 
+          - data.blog.articles[0...5].each do |article|
+            li
+              a href="#{article.url}" = article.title
+
+        
+
+
+
+
+    // Could I only show this if it exists?
+    footer
+      == yield_content :footer
+
