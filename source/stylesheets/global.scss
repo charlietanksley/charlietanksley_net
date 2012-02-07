@@ -226,12 +226,18 @@ section {
 }
 
 #site-nav {
-  text-align: center;
   font-family: $sans;
+  text-align: center;
   font-size: 1.1em;
+  // padding-top: 1em;
+  padding-bottom: 1em;
+  // background: white;
+  ul {
+    @include inline-list;
+  }
   a {
-    padding: 1em; }
-}
+    text-decoration: none;
+    padding: 1em; } }
 
 #page-nav {
   ol {
@@ -245,3 +251,14 @@ section {
   a {
     padding: 0.5em; }
 }
+
+h2 {
+  font-size: 1.5em; }
+h3 {
+  font-size: 1.4em; }
+h4 {
+  font-size: 1.3em; }
+h5 {
+  font-size: 1.2em; }
+h6 {
+  font-size: 1.1em; }
