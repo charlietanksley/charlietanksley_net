@@ -1,0 +1,581 @@
+<!DOCTYPE html><!--ht Paul Irish - http://front.ie/j5OMXi--><!--[if lt IE 7]><html class="no-js ie6" lang="en"></html><![endif]--><!--[if IE 7]><html class="no-js ie7" lang="en"></html><![endif]--><!--[if IE 8]><html class="no-js ie8" lang="en"></html><![endif]--><!--[if (gte IE 9)|!(IE)]><html class="no-js" lang="en"></html><![endif]--><html><head><meta charset="utf-8" /><title>Charlie Tanksley</title><meta content="Charlie Tanksley's personal site" name="description" /><meta content="Charlie Tanksley" name="author" /><!--/ht Andy Clarke - http://front.ie/lkCwyf--><meta content="on" http-equiv="cleartype" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><!--/ht Jeremy Keith - http://front.ie/mLXiaS--><link type="text/css" media="screen" href="stylesheets/global.css" rel="stylesheet" /><link type="text/css" media="screen" href="stylesheets/layout.css" rel="stylesheet" /><script type="text/javascript" src="javascripts/modernizr-1.7.min.js"></script><title>LaTeX for Philosophers (and other Humanitarians)</title></head><body class="latex-guide cf" id="container"><div id="main" role="main"><header><h1>LaTeX for Philosophers</h1><a name="#"></a></header><div class="body"><nav id="site-nav"><ul><li><a href='/'>Home</a></li><li><a href='/#connect'>Connect</a></li><li><a href='http://www.charlietanksley.net/philtex'>PhilTeX</a></li></ul></nav><nav id="page-nav"><ol><li><a href='#intro' name='page-navigation'>Introduction</a></li><li><a href='#why-latex'>Why use LaTeX</a></li><li><a href='#get-latex'>Get a TeX distribution</a></li><li><a href='#basics'>Write a basic document</a></li><li><a href='#bibliography'>Write a bibliography</a></li><li><a href='#customizing'>Make it your own</a></li><li><a href='#pdf'>PDF version</a></li></ol></nav><div class="article"><section><a name="intro"></a><h2>Introduction</h2><p>I think LaTeX is a fantastic tool for philosophers of all stripes&#8212;though it excels at typesetting the complicated formulas of logicians, it has distinct advantages for all philosophers. (I discuss some of these <a href='http://www.charlietanksley.net/latex-guide#why-latex'>below</a>.) If you are here, I assume you want to learn how to use LaTeX. You can find vast amounts of information on LaTeX online. But this is not entirely helpful. Much of it is written <em>for</em> scientists; most of it is written <em>by</em> people who are very capable technologically. While there are certainly philosophers who are technically inclined, comfortable with using the command line and/or writing code, etc., most of us are not. This is a guide to using LaTeX for those who either are not technologically inclined <em>or</em> who do not have the time to poke around and figure <em>everything</em> out on their own.</p>
+
+<p>Admittedly, LaTeX can seem overwhelming and complex. It needn’t be either of those things. There are three basic steps to producing your first LaTeX document. If you want to stop there, you will reap (practically) all the benefits of LaTeX. If you want to go further, it seems there is no end to the amount you can learn. My objective in these pages is to get you to a workable understanding of LaTeX with a minimum effort (on your part). After reading these pages, you should know how to write <em>all</em> your papers using LaTeX. If you want to jump ahead, click on the next page below. If you would like to know a bit more about LaTeX before we begin, read on.</p>
+
+<p>Writing a paper in LaTeX is more complicated than writing a paper in a word processor in two ways. First, you have to be more explicit using LaTeX than you would with a word processor. Second, there are a few steps between typing the words on your keyboard and producing a finished document in LaTeX, not so with a word processor.</p>
+
+<p>In the first instance, LaTeX is a markup language. So when you &#8216;write a paper in LaTeX&#8217;, what you are really doing is creating a plain text file (with a .tex extension&#8211;so paper.tex, for example) filled with your content <em>and</em> some explicit instructions. The basic instructions are not that complicated, and your text editor will help you write them, but you do have to be explicit about inserting them.</p>
+
+<p>The instructions you write in that plain text file are used in the steps between typing the paper and producing a finished product. Once you have a file, you run it through LaTeX. This is the step of compiling your paper, turning it from a plain text file into a PDF. (Note, there is the option to turn your paper into a .dvi file. I am certain there is <em>some</em> reason to want to do this. But I know that I have never had such a reason, and I bet you will be like me in this regard, so I will ignore that here.) All the little bits of code you explicitly insert into your paper are instructions that LaTeX uses to translate the .tex file into a .pdf file.</p>
+
+<p>Writing a paper in a word processor is kind of like a packaged cupcake. All the formatting work is done for you. Writing a paper in LaTeX is kind of like baking a cake: you mix up raw ingredients and you don’t have anything very special&#8211;you have a sort of ugly plain text file full of code that, were you to print, would be confusing to someone who didn&#8217;t know LaTeX. But just as you have to put a cake in the oven to produce delicious goodness, so too must you put your .tex file through a process to get out the typesetting-goodness that is a LaTeX document.</p><a href="#page-navigation">Table of Contents</a></section><section><a name="why-latex"></a><h2>Why use LaTeX?</h2><p>I think this is a good question. And to be honest, for some people there is no good answer. Some people should just stick with a word processor (though if they use a Mac, they might consider something like <a href='http://www.redlers.com/'>Mellel</a>, which is really great). Though I hope to help lessen the learning curve of LaTeX with this guide, the fact remains that writing a document in LaTeX is not as easy as opening up a word processor and writing a paper. But LaTeX does have its advantages. For me, when comparing pros and cons, LaTeX wins out over word processors.</p>
+
+<p>There are a handful of fun pages out there that details various reasons to prefer LaTeX to a word processor. I find the <a href='http://www.ctan.org/what_is_tex.html'>CTAN page</a> particularly informative, and Dario Taraborelli&#8217;s page on <a href='http://nitens.org/taraborelli/latex'>The Beauty of LaTeX</a> both interesting and compelling. Allin Cottrell&#8217;s <a href='http://ricardo.ecn.wfu.edu/~cottrell/wp.html'>Word Processors: Stupid and Inefficient</a> is as fun and interesting as the title provocative. (For a rather comprehensive comparison between word processors and LaTeX (which focuses on how to do things in LaTeX you already know how to do in a word processor), check out Guido Gonzato&#8217;s <a href='http://www.tex.ac.uk/tex-archive/info/latex4wp/latex4wp.pdf'>LaTeX for Word Processor Users</a>.) My aim in this page is to explain why I, as a philosopher, prefer LaTeX to a word processor. I&#8217;ll do that by first explaining the initial reasons that I wanted to learn LaTeX, then explaining what I now think are the virtues of LaTeX over my old, word processor-using ways.</p>
+
+<h3 id='initial_reasons_to_switch'>Initial reasons to switch</h3>
+
+<h4 id='formatting_headaches'>Formatting headaches</h4>
+
+<p>I started using LaTeX on my Windows laptop in the summer of 2009. I had just finished the mind-numbing process of trying to get a dissertation to look right in Word. It wasn&#8217;t easy to get the thing to have a consistent look; my hopes for that consistent look also being attractive were quashed early in the process. I have a friend who swears he has never had a problem with Word imposing frustrating (and mistaken) formatting on him. I am not certain I believe him. If you have ever had your word processor <em>insist</em> that your paragraph be block indented, or that you meant to start a numbered list, or that you wanted this new footnote to be in 12 point font even though all the others are in 10 point, then you understand the frustration you get with a What You See Is What You Get word processor.</p>
+
+<p><em>Why LaTeX is better:</em> You don&#8217;t get that with LaTeX. You type your document without worrying about the final look. You put text in a footnote if it is a footnote. Making the footnote look right is a separate process. What is more, all the formatting stuff is handled in one, central location at the start of the document. So if you want all your headers to be in a sans-serif font but the body of the document to be in a serif font, you just specify that once in the prologue of your document and LaTeX will take care of it when you typeset the document. As proponents of LaTeX are wont to say: LaTeX separates content from presentation. (I know that the skillful use of styles in a word processor can ease some of these problems. I don&#8217;t claim LaTeX is the <em>only</em> way to get any of the advantages I specify here.)</p>
+
+<h4 id='bibliography_management'>Bibliography management</h4>
+
+<p>Managing the bibliography for my dissertation was quite a chore. The task of making sure every paper I cited in the text or a footnote was represented in the bibliography, and that every text in the bibliography was actually cited in the text was not a fun one. It isn&#8217;t so bad if you have one paper by an author. But when you have multiple papers (in the same year even), bibliography management gets cumbersome and error prone. You need bibliography management software, whether you use a word processor or LaTeX. I didn&#8217;t know this when I wrote my dissertation. I wrestled with citations the way I think many word processor users do.</p>
+
+<p><em>Why LaTeX is better:</em> You can get good bibliography managers that work with various word processors. LaTeX comes with this functionality built-in. (Plus there are free programs that make interacting with your LaTeX bibliography, keeping your references in order, etc. a breeze.)</p>
+
+<h4 id='price'>Price</h4>
+
+<p>I was getting ready to buy a new computer when I tried out LaTeX. There really are a lot of great alternative word processors out there, and as I prepared to switch from a PC to a Mac, I looked at a number of these pretty seriously. Though OpenOffice (and its Mac-specific counterpart, <a href='http://www.neooffice.org/neojava/en/index.php'>NeoOffice</a>) is free, most word processors are not. There were lots of programs I was looking forward to spending good money on. I was not thrilled at the prospect of dropping nearly $200 on Word (that is the price from Amazon today!).</p>
+
+<p><em>Why LaTeX is better:</em> This should be an obvious one. LaTeX is free! And so are the external bibliography managers you can use to easily interact with your bibliography file. (For more on bibliographies, see my <a href='http://www.charlietanksley.net/latex-guide.html#bibliography'>below</a>.) And so are a handful of really great text editors you can use to write your documents (one great editor, <a href='http://macromates.com/'>TextMate</a>, is not free; but it is the exception). Add to that the fact that the community in the LaTeX world is so friendly and generous, and you are really starting to get some value for your money!</p>
+
+<p>A word on the LaTeX community. I had lots of problems using Word on my PC. But I never tried to get customer support because I figured there wasn&#8217;t any way to fix the problems I had (described above). But when I have a problem with LaTeX, I&#8217;m typically convinced there is a solution. And with a careful search and little bit of time, I have been able to find a helpful answer online for <em>every</em> problem I have had with LaTeX. That, to me, is huge. I knew the LaTeX community was good when I got started with LaTeX; but I have been surprised with just how helpful they are. (And I haven&#8217;t even had to email a question to one of the active and helpful mailing lists.)</p>
+
+<p>If you need help, take a look at <a href='http://latex-community.org/'>latex-community.org/</a>, which has an active forum. Or you could join, then ask your questions to, one of the many LaTeX mailing lists (be sure to check the list archives to see if your question has been answered before you send your email). <a href='http://tug.org/mailman/listinfo/texhax'>Texhax</a> is a general mailing list, and there are specific lists for the <a href='http://mactex-wiki.tug.org/wiki/index.php/TeX_on_Mac_OS_X_mailing_list'>MacTeX</a> (for Mac users) and <a href='http://miktex.org/list'>MikTeX</a> communities.</p>
+
+<h3 id='current_reasons_to_favor_latex'>Current reasons to favor LaTeX</h3>
+
+<p>The reasons I started using LaTeX aren&#8217;t exactly the reasons I prefer LaTeX to a word processor now. I do still endorse the reasons above, but I have five new reasons to prefer LaTeX.</p>
+
+<h4 id='plain_text_files'>Plain text files</h4>
+
+<p>I really like plain text files, and LaTeX files are plain text. That means a few things to me. First, they are small (the Word version of one of my papers is 127KB, the Pages version is 279KB, and the .tex file is 57KB.) Size isn&#8217;t a huge issue, but smaller files are easier to email, etc. Second, you can open and edit them using <em>any</em> text editor. This is <em>huge</em> to me. It means that if I have to switch to Linux or FreeBSD or Windows, my papers can go with me with <em>no</em> compatibility issues. And it means I avoid the incompatibility problems that come with upgrading software (e.g., when you can&#8217;t open your student&#8217;s papers because the new .docx or .pages files for Word 08 or Pages 09 cannot be read by your Word 04 or Pages 08). My documents are mine. They are not locked into anyone&#8217;s proprietary format. I like that. A lot.</p>
+
+<h4 id='version_control'>Version control</h4>
+
+<p>The second reason also depends on the fact that my files are plain text: I can use a fantastic version control system called <a href='http://git-scm.com/'>git</a>. A version control system is a way of keeping track of changes you make to your file. If you are tracking your paper with git, then you can try a major structural change to your document and, if it turns out to have been a mistake, you can <em>very</em> easily erase all those changes and go back to the old version. This keeps you from having all those &#8216;paper_d1&#8217;, &#8216;paper_d2&#8217;, etc. files in your folders and either (a) not remembering the difference between any two drafts or (b) having a third file where you try to keep track of things. (There are other benefits of a VCS; but this alone is big for me.)</p>
+
+<p>I believe that some word processors have fairly good revision control features (and if you use <a href='http://www.dropbox.com/'>Dropbox</a> you get a version of this). And there are certainly other version control systems that rival git; but git has changed the way I work. I love it. And I wouldn&#8217;t be able to use it were it not for the fact that my papers are written in LaTeX and saved as plain text files. (I should give a hat tip here to <a href='http://markelikalderon.com/home/'>Mark Eli Kalderon</a>. I learned about git (and a fair bit about LaTeX) by reading his excellent <a href='http://markelikalderon.com/'>blog</a>. I highly recommend it.)</p>
+
+<h4 id='text_editors'>Text editors</h4>
+
+<p>One more reason I like the plain text-ness of LaTeX documents: I can use a great text editor to write my papers. I had never heard of <a href='http://www.vim.org/'>Vim</a> until a few months ago. I started out writing my papers with the default text editor that comes with MacTeX, TeXShop. I think TeXShop is great, but I think Vim is better! Text editors are sensitive subjects, and Vim <em>is not</em> the best editor for everyone. But I love it.</p>
+
+<p>I plan to write more about Vim over at my tech related blog, <a href='http://www.charlietanksley.net/philtex/'>PhilTeX</a>, but here, super-briefly, is why I love Vim. Vim is a <em>modal</em> editor. That is, it has multiple modes. The two most frequently used are NORMAL and INSERT mode. If you are in INSERT mode, you are basically using a text editor like any other (like TextEdit, TeXShop, TeXworks, etc.). You type <code>dd</code> and you get &#8216;dd&#8217; in your document. If you hit the escape key, you will switch over to NORMAL mode, however. That is where the magic happens. In NORMAL mode, each key gets a new meaning. These are all aimed at helping you <em>edit</em> your document efficiently. If you type <code>dd</code> in NORMAL mode, you delete the entire paragraph the cursor is on; type a <code>~</code> and you change the case of the letter under the cursor; type <code>ddGp</code> and you delete the current paragraph, move to the bottom of the document, and paste that paragraph there. Learning all the alternative meanings for the keys is sort of difficult, so it would be a bad idea to pick up Vim when you are trying to learn LaTeX. But I find that one of the most frustrating parts of writing is editing&#8212;cutting these three words then making the &#8216;i&#8217; at the start of the next word a capital. This is just tedious and time-consuming, and Vim makes it less so. (For the record, a simple <code>d3W~</code> would do this in Vim.) You can only edit text files in Vim, and since all my LaTeX papers are text files, I get to use Vim to write and edit them.</p>
+
+<h4 id='the_output'>The output</h4>
+
+<p>When I started thinking about switching to LaTeX, I read all these arguments that LaTeX documents are just so much better looking than documents produced by a word processor. I wasn&#8217;t really swayed. I could sort of see it, but not really. After writing papers in LaTeX for a few months, I am a convert. They seriously look <em>so much</em> better than those written with a word processor. This <em>should</em> be no surprise&#8212;LaTeX is basically a professional typesetting system&#8212;but it was kind of surprising. Especially when, after writing only in LaTeX for three or four months I got my Word-produced, bound dissertation in the mail. It isn&#8217;t pretty (but I like the arguments!). If only I had switched to LaTeX earlier&#8230;</p>
+
+<h4 id='formatting'>Formatting</h4>
+
+<p>Time spent messing with formatting is an investment, not a waste. If anyone tells you that you can write your papers in LaTeX without having to fiddle with formatting, they are lying. You do have to work with LaTeX to get your papers to look the way you want. And you will run into a few places, more than likely, where you can&#8217;t figure out how to get LaTeX to behave and must look for help from someone. But there is a difference between time spent working on the formatting of a LaTeX document and time spent working on the formatting of a Word document.</p>
+
+<p>Where with a word processor you are trying to get <em>this particular footnote</em> to look like all the others, in LaTeX your changes are <em>global</em>; so while you might spend some time learning how to make your ordered lists look a certain way, you can add whatever you learn to the prologue of your document template and your ordered lists will look that way <em>from here on out</em>. The time you spend is usually more of an investment than it is with a word processor. You aren&#8217;t fixing <em>this</em> problem, usually you are fixing a whole class of problems&#8212;this problem now, and related problems in the future.</p><a href="#page-navigation">Table of Contents</a></section><section><a name="get-latex"></a><h2>Get a TeX Distribution</h2><p>The first step to writing a LaTeX document is getting the proper software&#8212;in particular, obtaining a TeX (that is, LaTeX) distribution and a good text editor. This is not particularly difficult.</p>
+
+<h3 id='installing_on_a_mac'>Installing on a Mac</h3>
+
+<p>If you have a Mac, the best option to download and install <a href='http://www.tug.org/mactex'>MacTeX</a>. If you download and install the main package there, you will install a number of different items. Most importantly, you will install the most recent TeX distribution. These are the tools you need to take a document from a marked-up plain text file to the lovely document you think of as being &#8216;written in LaTeX&#8217;. Without this bit, you cannot do anything with LaTeX.</p>
+
+<p>The MacTeX package is great because of all the tools it includes. You <em>could</em> write all your LaTeX files (your .tex files) in a text editor like TextEdit, and then compile them by typing in commands in Terminal.app. But my guess is that if you are reading this document, you are not going to feel comfortable doing all that. Moreover, though a .tex file is just a plain text file, having an editor dedicated to LaTeX (or at least one that has lots of LaTeX related features built in) is priceless.</p>
+
+<p>So what does the MacTeX package include? For my money, the big three items for philosophers will be TeXShop, BibDesk, and Excalibur. I’ll talk about the first two in detail later, but for now I will note that TeXShop is where you will actually compose your paper&#8212;it is sort of like your new version of Word or Pages. BibDesk is your new bibliography management tool. And Excalibur is a spell checker.</p>
+
+<p>Download MacTeX. Follow the usual installation instructions.</p>
+
+<h3 id='installing_on_a_pc_running_windows'>Installing on a PC (running Windows)</h3>
+
+<h4 id='on_your_own_computer'>On your own computer</h4>
+
+<p>Disclaimer: I do not have a PC. I did install LaTeX on a PC once, but it has been a while and my memories are fuzzy. So some of my PC-specific instructions might be a bit off. Please let me know if I lead you astray so I can fix any bad advice. LaTeX is platform neutral. So, <em>for the most part</em>, the things I say here will apply for both Macs and PCs. I will offer a few Mac-specific hints, but I bet there are PC analogues for them. Again, if you want to make suggestions, I would be thrilled to have them. Email me at <a href='mailto:charlie.tanksley@gmail.com'>charlie.tanksley@gmail.com</a>.</p>
+
+<p>If you have a PC, you will want to download and install <a href='http://miktex.org/'>MiKTeX</a>. If you download and install the main package there (the &#8216;Basic MiKTeX Installer&#8217;), you will install a number of different items. Most importantly, you will install the most recent TeX distribution. These are the tools you need to take a document from a marked-up plain text file to the lovely document you think of as being &#8216;written in LaTeX&#8217;. Without this bit, you cannot do anything with LaTeX.</p>
+
+<p>Download MiKTeX and follow the usual installation instructions. (If you need more detailed instructions, take a look at <a href='http://www.cae.tntech.edu/help/office/latex/windows_install'>this page</a>.)</p>
+
+<p>You need a good LaTeX-specific text editor to begin your journey. I believe that MikTeX now comes with <a href='http://www.tug.org/texworks/'>TeXworks</a>, but I could be mistaken about that. (It used to come with <a href='http://texniccenter.org/'>TeXnicCenter</a>, but I am pretty sure it no longer does.) There are other options out there, but these two are pretty straightforward and user friendly, so I suggest you download and install one of them if neither comes with MikTeX.</p>
+
+<p>Once you have installed MikTeX, read on.</p>
+
+<h4 id='if_you_cannot_install_software'>If you cannot install software</h4>
+
+<p>If you often work at your office or in a computer lab, you might not be able to install MikTeX on your PC because you might not have the right kind of password. So long as your computer is a PC (running Windows or a version of Linux), there is a workaround. You can install MikTeX on a USB Flash Drive. Just go to <a href='http://miktex.org/portable/about'>this page</a> and follow the instructions for installing MikTeX Portable. MikTeX portable includes a text editor&#8212;TeXworks&#8212;so once you install MikTeX portable on a thumb drive you are good to go.</p>
+
+<p>If this is not a good option for you for some reason, you can still use LaTeX. There are an increasing number of capable online LaTeX editors and compilers you can use for free. Google has made a preview release version of their <a href='http://docs.latexlab.org/'>latexlab</a> available online. I have not done any serious work on it, but it looks pretty good, and people seem to love Google Docs, so it at least runs with a good crowd.</p>
+
+<p>Once you have installed MikTeX portable, or have decided to use latexlab, proceed with this guide.</p>
+
+<h3 id='installing_on_a_linux_pc'>Installing on a Linux PC</h3>
+
+<p>Installing a TeX distribution on a Linux platform is straightforward. Just use your package manager to find the texlive package, then install it. This will vary from system to system as the package managers vary. Just be sure to install <code>texlive</code>&#8212;if there is an option, install <code>texlive-full</code>.</p>
+
+<p>Installing texlive via your package manager (either the graphical version or on the command line) will get you a TeX distribution. This is the series of packages and commands that will take you from a markup-laced .tex file to a nice .pdf file. But the texlive package will not include a text editor to help you write said .tex files. You want a good text editor for this&#8212;it will make your LaTeX life much easier. Fortunately, there are many options out there.</p>
+
+<p>Kevin Kelment (who has given me lots of feedback about the Linux-and-LaTeX options) tells me that <a href='http://gummi.midnightcoding.org/'>Gummi</a> and <a href='http://kile.sourceforge.net/'>Kile</a> are very good, very capable LaTeX editors. Download one of them via your package manager.</p><a href="#page-navigation">Table of Contents</a></section><section><a name="basics"></a><h2>Write a Basic LaTeX Document</h2><p>Your objective is to write a paper. To do that, you need to create a file of the right sort (that contains the right commands). To be more specific, you need to create a plain text file with a .tex file extension. So the file for your first paper might be called &#8216;first_paper.tex&#8217;. (Those unfamiliar to the world of computers might be surprised to find out that there are a number of file extensions that a plain text file could take. I always thought they had to be .txt files, but LaTeX files are .tex files and your bibliography file will be a .bib file, both of which are plain text files; there are, in fact, quite a few different flavors of plain text files.)</p>
+
+<p>I&#8217;d recommend writing your paper using either TeXShop (if you have a Mac) or TeXnicCenter (if you have a PC). Just start the program and you should get a new file (you may have to select <code>File -&gt; New</code>). Whatever program you use, if it is a LaTeX-specific editor, once you save the file, it should have the right extension.</p>
+
+<p>Every paper you write will need to include the same basic commands. It must open with a prologue. And it must end with an <code>\end{document}</code> command. Your editor will likely have some templates you can choose from that will do all this for you. Let them do the work when you are getting started (eventually, you can modify the basic template and make your own template; but that is a few steps down the road). When you open up TeXShop for example, there is a button marked &#8216;Templates&#8217; at the top. If you click on that, you will get a drop-down menu of template options. Start with the LaTeX template and you will have <em>most</em> of the prologue written for you.</p>
+
+<p><img src='images/latex/TeXShop_templates.png' alt='Selecting the LaTeX template' /></p>
+
+<p>Here is what the TeXShop LaTeX template (henceforth, the LaTeX template) looks like:</p><pre class="code">\documentclass[11pt]{amsart}
+\usepackage{geometry}   
+%\geometry{letterpaper} 
+%\geometry{landscape} 
+\usepackage[parfill]{parskip} 
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}%
+  {`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Brief Article}
+\author{The Author}
+\date{}  % Activate to display a given date or no date
+
+\begin{document}</pre><p>This will <em>almost</em> work for us. The <code>\documentclass</code> command tells LaTeX very general formatting information about your paper. The amsart document class is for math papers. For papers that are a little more philosophy-like, you&#8217;ll want to use the Article class. And you will probably want your paper to be in 12 point font. So change out the first line to this:</p><pre class="code">\documentclass[12pt]{article}</pre><p>Before you begin writing the content of your paper, you want to do three things. First, change the stuff in the scope of the <code>\title</code> command to be the title of your paper. Second, put your name in for &#8216;The Author&#8217;. Third, make sure there is a <code>\maketitle</code> command right after the <code>\begin{document}</code> command. This will be there if you use a template. This command tells LaTeX to write your name and title on your paper.</p>
+
+<p>Now you can begin writing your paper.</p>
+
+<h2 id='writing_the_content_of_your_paper'>Writing the content of your paper</h2>
+
+<p>For the most part, writing the content of a basic paper is no different than writing a paper using a word processor. There are a few things you need to be aware of, however.</p>
+
+<h3 id='new_lines'>New lines</h3>
+
+<p>You must end a paragraph with a blank line (alternatively, you can type two backslashes). A single return will not be read as the start of a new paragraph. You must enter two returns.</p>
+
+<p>As an example, note that this</p>
+
+<p><img src='images/latex/SingleSpaceLines.png' alt='tex file' /></p>
+
+<p>will give you a single line of text:</p>
+
+<p><img src='images/latex/SingleSpaceLinesLaTeX.png' alt='pdf file' /></p>
+
+<p>But this</p>
+
+<p><img src='images/latex/DoubleSpaceLines.png' alt='tex file' /></p>
+
+<p>will give you two separate paragraphs:</p>
+
+<p><img src='images/latex/DoubleSpaceLinesLaTeX.png' alt='pdf file' /></p>
+
+<p>This is a slightly odd habit to learn, but once you do, it is pretty straightforward. One nice thing is that LaTeX will take care of spacing for you. So you needn&#8217;t worry about indentation. Nor need you make sure you get two spaces after a period and only one after each word; LaTeX treats multiple spaces as if they were one, and it sorts out the spacing to make your lines look right. Additionally, LaTeX reads three or seven or twenty blank lines as if they were one; you do not have to have <em>exactly</em> one blank line between each paragraph, though you must have <em>at least</em> one blank line.</p>
+
+<h3 id='italics_and_bold_in_latex'>Italics and bold in LaTeX</h3>
+
+<p>If you want to <em>italicize</em> or <strong>bold</strong> some text, you have to use the proper commands. Any text you put inside the scope of a <code>\emph{}</code> command will be italicized; any text in the scope of a <code>\textbf{}</code> command will be bold. (If you were to <em>nest</em> <code>\emph{}</code> commands, however (e.g., <code>\emph{some \emph{italicized} text}</code>), <code>\emph</code> command has the effect of toggling italics (so your output would be: &#8217;<em>some</em> italicized <em>text</em>&#8217;.) Note that on the toolbar of TeXShop there is a drop down menu called &#8216;Macros&#8217;; under that menu you will find a &#8216;Text Styles&#8217; heading, then an &#8216;Emphasize&#8217; (or &#8216;Typeface&#8217; then &#8216;Bold&#8217;) entry. In TeXnicCenter, there is a little button on the bottom left of the toolbar that you can click to make text bold or italic, just like in Word. You&#8217;ll find something similar on most LaTeX editors.</p>
+
+<h3 id='quotation_marks'>Quotation marks</h3>
+
+<p>Perhaps oddly, LaTeX does not know how to handle quotation marks very well. If you type a standard double-quote mark (<code>&quot;</code>), LaTeX will always compile it as closing quotation marks. So at the start of a quotation, single or double, you need to use a back tick&#8212;that looks like this &#8217;`&#8217; and is typically on the same key as the tilde \~. To finish a quote, you use a double apostrophe. You never use the double-quote symbol. In order to close a single-quote, you use a single apostrophe.</p>
+
+<p>Fortunately, most LaTeX-specific text editors are sophisticated enough to correct this. So if you type a double-quote you&#8217;ll end up getting a pair of back ticks followed by a pair of apostrophes, with your cursor right in the middle where you want it. So while you need to be aware of this bit of archaic LaTeX behavior, it should likely not alter the way you work at all.</p>
+
+<h3 id='sections_and_subsections'>Sections and sub-sections</h3>
+
+<p>If you want to start a new section, simply type <code>\section{Title}</code>, filling in the title of the section. If you want a subsection, type <code>\subsection{Title}</code>, filling in the title. LaTeX will take care of the numbering for you.</p>
+
+<h3 id='special_symbols_in_latex'>Special symbols in LaTeX</h3>
+
+<p>There are some special symbols in LaTeX. If you type a percent sign, for example (%), LaTeX takes that to mean that it should ignore everything that follows on the line. So if my .tex file were to include the following:</p>
+
+<p><img src='images/latex/comment_ex_tex.png' alt='LaTeX fragment' /></p>
+
+<p>The compiled document would look like this:</p>
+
+<p><img src='images/latex/comment_ex_pdf.jpg' alt='LaTeX fragment' /></p>
+
+<p>This means the above sample prologue is full of comments LaTeX will ignore. These are simply notes to explain to you what the various commands do and what your options are. LaTeX likewise gives special meaning to curly braces and amperstands. So if you want to type any of these symbols, you must <em>escape</em> them; that is, you must put a backslash directly in front of them: <code>\% \{ \}</code>. Backslashes are a different matter. They are special symbols as well. But if you backslash-escape a backslash (e.g., <code>\\</code>), you will get the symbol for a new line. Instead, if you need to use a backslash you must write <code>\backslash</code>.</p>
+
+<h3 id='spaces'>Spaces</h3>
+
+<p>Relatedly, spaces can be slightly tricky when using LaTeX. One of the nice things about LaTeX is that a very advanced algorithm takes care of inter- and intra- word spacing. You needn&#8217;t put two spaces between sentences; LaTeX will put the best spacing between them given the context. But because of this, LaTeX is somewhat ignorant about periods: it assumes every period ends a sentence. So it will put the same amount of space between the words <code>Mr. Jones</code> as it does between the sentences <code>composition.  But Lewis</code>. To get the spacing right, you need to tell LaTeX to use one space in the first case and just let it use the default behavior in the second. To do this, you would write <code>Mr.\ Jones</code>. The backslash tells the LaTeX compiler that you mean there to be only one space between those words. [Thanks to Gregory Wheeler for suggesting I include this here.]</p>
+
+<p>If you want your spacing to be perfect, you&#8217;ll always stick a backslash after a period that does not terminate a sentence. I don&#8217;t run into occasions to do this very often. Sometimes I&#8217;ll need to do it with an <code>etc.\ but</code> or an <code>et al.\ argue</code>, but these are pretty rare. The good news (for me at least), is that if you happen to forget to use the backslash space, the spacing difference is typically not noticeable. At least, it isn&#8217;t for me. I&#8217;m sure there are some occasions where I would really want to be perfectly precise, but I usually don&#8217;t care too terribly much. In fact, I forgot about this point until Greg mentioned it to me in an email&#8212;this entire document is written without any such backslash spaces after abbreviations! Nevertheless, I thought Greg was right and I should mention it here for the sake of completeness. Consider yourself notified.</p>
+
+<h3 id='footnotes'>Footnotes</h3>
+
+<p>You must tell LaTeX about footnotes explicitly. To do this, use the <code>\footnote{Footnote text.}</code> command. Do not leave a space between the command and the punctuation it is to follow, else you will get an odd space. Your footnotes will be embedded in your text when you are working on your .tex file. (They&#8217;ll be lovely footnotes in the .pdf, of course.) For me, this was one of the hardest parts of the transition to LaTeX. It can be difficult to figure out where a footnote begins and ends when it is embedded in the paragraph, and it is difficult to change footnote 23 when the notes in the .tex file lack numbers. TeXShop (and TeXnicCenter, I think) have a feature that helps here: Sync. When you are in a .pdf or a .tex file, right click (or Command + click, or Control + click, depending on your setup) on any part of either file and you will be placed more or less in that same spot in the other file. It is not perfect, but it helps.</p>
+
+<p>Another suggestion for dealing with footnotes: since LaTeX ignores anything after a percent sign, you can write something like the following to set your footnotes apart in the .tex file:</p><pre class="code">end of sentence.%
+%
+%
+%
+\footnote{The footnote text.}
+%
+%
+%</pre><p>[Thanks to Alex Skiles for this suggestion.]</p>
+
+<h3 id='latex_citations'>LaTeX citations</h3>
+
+<p>If you like, you can do your citations like you probably used to: you can write <code>Lewis (1986)</code> when you want to cite <em>On the Plurality of Worlds</em>, and then create a section called &#8216;Bibliography&#8217; where you type in the bibliographic information. A better way is to use BibTeX and BibDesk or JabRef. I&#8217;ll explain those more <a href='http://www.charlietanksley.net/latex-guide.html#bibliography'>later</a>.</p>
+
+<h3 id='dashes_and_hypens'>Dashes and hypens</h3>
+
+<p>Finally, note that LaTeX is kind of picky about dashes and hyphens. If you want to type a hyphen, as in &#8216;sub-set&#8217;, you want to type a single hyphen or minus sign. If you want to type a dash <em>between page numbers</em> you want to type two hyphens (so <code>22--24</code>). If you want an <em>em dash</em>, you need to type three hyphens (so <code>that is the view---though I</code>). And if you need a minus sign you type a hyphen within the scope of the math environment (an opening and closing dollar sign (or a <code>\( \)</code>) mark that environment within a paragraph, so <code>$-3$</code> would give you negative three).</p>
+
+<h2 id='ending_the_paper'>Ending the paper</h2>
+
+<p>After you have finished writing the content of your paper, you need to put a <code>\end{document}</code> command. Anything you put after this command will be ignored when you compile your paper.</p>
+
+<h2 id='compiling_your_paper'>Compiling your paper</h2>
+
+<p>You have written a .tex file at this point. To be honest, it is kind of an ugly mishmash of code and philosophy. It is emphatically not the finished product you are going for. (Incidentally, it does have a beauty all its own: it is a plain text file. This means that in ten years when your colleagues can no longer open their old Word documents using whatever word processor is all the rage, you will be able to open your files with ease using any text editor you like.)</p>
+
+<p>To turn your paper from a .tex file to a .pdf file you need to compile it. You could do this via the command line, but TeXShop and TeXnicCenter make this easy for you. In TeXShop, just click the &#8216;Typeset&#8217; button in the menu bar and then click on &#8216;LaTeX&#8217;. In TeXnicCenter, make sure the button in the toolbar says <code>LaTeX =&gt; PDF</code>, then click &#8216;Build&#8217; in the toolbar and select &#8216;Build Output&#8217;. (I&#8217;ll discuss some of the other options later.) A little box&#8212;the console window&#8212;will pop up that prints a record of the typesetting operation (I think in TeXnicCenter, the console window might be at the bottom of the window; in TeXShop it is free floating). If everything goes according to plan, a .pdf document will pop up on your screen.</p>
+
+<p>A word of warning: When you typeset your document, LaTeX has to generate a number of temporary files for its own use. It does not delete them automatically. There is a &#8216;Trash Aux Files&#8217; button on the console in TeXShop that allows you to delete these files. Nevertheless, it is a good idea to put your .tex file in a folder or directory before you compile it&#8212;that way the cruft is contained and not spread all over your desktop or Documents folder.</p>
+
+<p>When you write a very basic document—one with no references, internal or external—you will only need to compile it a single time. But once you start working with a bibliography or internal references to sections or footnotes, you&#8217;ll need to compile the document multiple times. This simply means you click on the <code>Typeset -&gt; LaTeX</code> button twice. But we can worry about that complication later.</p>
+
+<h2 id='latex_error_messages'>LaTeX error messages</h2>
+
+<p>There is a minor hassle with LaTeX that you tend to avoid with word processors: error messages. Sometimes things go wrong in the conversion from .tex to .pdf; when things go wrong, compiling will stop and an error message will appear in the console window. Part of really learning to use LaTeX is learning to read these error messages. And if your use of LaTeX is anything like mine, part of using LaTeX is trying hard to ignore lots of these messages! Though I am sure there is some way in which this is ill-advised, I always hit <code>&lt;Enter&gt;</code> after I get an error message. Sometimes LaTeX is just letting you know that something isn&#8217;t quite up to its rather exacting standards. In such a case, it is happy to go on compiling once you dismiss the error message. But sometimes you aren&#8217;t so lucky. Sometimes the error keeps repeating. In such cases, you can click the &#8216;Go to Error&#8217; button on the console and it will usually take you to the vicinity of the offense (sometimes the errors aren&#8217;t in a specific location).</p>
+
+<p>When I started using LaTeX, the vast majority of error messages I received were from brackets or commands I had forgotten to close, so that is likely a good first place for you to look. If you type <code>\emph{</code> and never close that bracket, LaTeX does not know what the emphasis ranges over. So it returns an error message. <em>Every</em> command in the body of your paper has a range, and you will get an error unless you specify the start <em>and</em> the end of that range. There are two ways to do this. Inline commands&#8212;commands like <code>\emph{}</code> and <code>\footnote{}</code>&#8212;mark their range with brackets. Block commands—such as the command for a block quote or a numbered list—mark their range with <code>\begin{}</code> and <code>\end{}</code> commands. So a block quote is marked off in the following way:</p><pre class="code">\begin{quote}
+The quote text.
+\end{quote}</pre><p>If you do not include either of those commands, you will get an error.</p>
+
+<p>There are other ways in which you can make LaTeX throw an error message. This is one place LaTeX is more costly than using a word processor. One nice thing is that LaTeX will always give you an error <em>message</em> to let you know what is going wrong. When you are new, you won&#8217;t always be able to tell what those messages mean, but rest assured that they do mean something, and they typically mean something quite specific. Do a search on the error message and you&#8217;ll find someone online explaining how to solve your problem (<a href='http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Help#LaTeX_Errors_with_Error_Messages'>here</a> is a nice place to start your search).</p>
+
+<h2 id='next_steps'>Next steps</h2>
+
+<p>The foregoing is sufficient to get you a basic paper. But most philosophy papers will require more than this. For one thing, you want an easy way to interact with your bibliography. For another, you&#8217;ll want to double-space your paper to submit it to conferences and journals. And you might want to change the font or play around with other options. The next step I&#8217;ll cover is the <a href='http://www.charlietanksley.net/latex-guide.html#bibliography'>bibliography</a>. But you can click <a href='http://www.charlietanksley.net/latex-guide.html#customizing'>here</a> to learn about customizing your paper.</p><a href="#page-navigation">Table of Contents</a></section><section><a name="bibliography"></a><h2>Write a Bibliography</h2><h2 id='overview_of_steps_for_a_latex_bibliography'>Overview of steps for a LaTeX bibliography</h2>
+
+<p>There are three steps to effective bibliography management:</p>
+
+<ol>
+<li>Creating a .bib file.</li>
+
+<li>Insert references into your .tex file.</li>
+
+<li>Format your references.</li>
+</ol>
+
+<p>I&#8217;ll describe each step in detail below.</p>
+
+<h2 id='creating_a_bib_file'>Creating a .bib file</h2>
+
+<p>All your bibliography information will be stored in a structured file with a .bib extension. When you compile your document, LaTeX will look at that file, pull the right references, and stick all and only the right references in your works cited.</p>
+
+<p>Sounds easy enough: stick all your bibliography information in one file, cite your references as you go, and let the computer sort out the bibliography. And it is (basically) that easy. I include the parenthetical because a .bib file is a highly structured file, and if you don&#8217;t have the right tools, creating one is a bit of a hassle.</p>
+
+<p>As an example, here is my entry for Lewis&#8217;s <em>On the Plurality of Worlds</em>:</p><pre class="code">@book{LewisOPW,
+    Address = {Oxford},
+    Author = {David Lewis},
+    Date-Added = {2009-10-13 11:33:52 -0400},
+    Date-Modified = {2009-10-13 11:33:52 -0400},
+    Publisher = {Basil Blackwell},
+    Read = {Yes},
+    Title = {On the Plurality of Worlds},
+    Year = {1986}}</pre><p>For the most part, it is clear what each line of this file is doing. The first says we are talking about a book, not an article, and then it assigns a little code to the book. My code is the author&#8217;s last name and then the first letters of each word in the title (or a memorable combination of some of those letters). This is the <em>cite key</em> for this reference. It is <em>very</em> important. It must be unique to the reference in question. I&#8217;ll come back to cite keys in the next section.</p>
+
+<p>The rest of the lines indicate where the book was published, who the author is, when I added this file to my bibliography, the book publisher, whether I&#8217;ve read the work, the title of the book, and the year it was published. Like I said, pretty straightforward. But can you imagine putting every reference from your dissertation, a book, or even a single paper in that format? It seems miserable.</p>
+
+<p>But there is a better way. If you have a Mac, when you downloaded MacTeX, you downloaded a program called BibDesk. BibDesk is going to solve all your problems. (If you have a PC, you are only a little less lucky. <a href='http://jabref.sourceforge.net/'>JabRef</a> is the Windows counterpart to BibDesk. I&#8217;ve never used JabRef, but I&#8217;m guessing it is fairly similar to BibDesk.) BibDesk gives you a very nice graphical user interface for creating a .bib file.</p>
+
+<p>BibDesk is straightforward, so I won&#8217;t say too much about it. When you click to create a new reference, you get a nice window like this:</p>
+
+<p><img src='images/latex/bibdesk.png' alt='BibDesk image' /></p>
+
+<p>All you have to do is pick a <em>unique</em> cite key for the work, then fill in the publication information, and BibDesk will format the BibTeX file for you. (Notice the little area over on the right: if you drag a pdf file of a paper here, then when you do a search in your bibliography, BibDesk will search within the article. And if you happen to take notes on the pdf using <a href='http://skim-app.sourceforge.net/'>Skim</a>, BibDesk will search those, too.)</p>
+
+<h3 id='an_important_note'>An important note</h3>
+
+<p>You <em>must</em> create your bibliography file in the right location. If you don&#8217;t it can&#8217;t be found when you compile your document, and that defeats the purpose. There are two locations you can use. You could put your .bib file in the folder that houses your .tex file. BibTeX (the compiler you run to turn cite keys in your .tex file into the format LaTeX needs to compile them) can find them that way. But if you do this, you obviously cannot use one big bibliography for all your papers (unless you keep everything in one folder). Alternatively, you <em>could</em> create a duplicate .bib file for every paper you write, but these would be difficult to keep synchronized.</p>
+
+<p>There is a better option. To use it, you need to create a new folder. (This applies to Macs only. I don&#8217;t know where you should put your bibliography if you use a PC. Sorry.) If you open up the Finder, it will likely come up to your main user folder. That should bear your user name as its name. (Mine is <code>charlietanksley</code>.) This folder contains a Documents folder, a Downloads folder, a Music folder, etc. You want to open the Library folder. Create a folder in that folder called <code>texmf</code>. In the texmf folder, create a pair of folders: one called <code>bibtex</code> and one called <code>tex</code>. We&#8217;ll set the <code>tex</code> folder aside for now. In the bibtex folder, create another pair of folders: one called <code>bib</code> and one called <code>bst</code>. <em>Put your bibliography in the bib folder.</em> My bibliography can be found at the following location: <code>charlietanksley/Library/texmf/bibtex/bib/mybib.bib</code>. You should put yours at the same location <em>modulo</em> a pair of changes: your user name should replace my user name, and the name of your bibliography should stand in for <code>mybib.bib</code>.</p>
+
+<p>If you put your bibliography here, TeXShop knows where to look in the compilation process. It also knows where to look to help you insert references into your document. And that, as we&#8217;ll see, is a very big help.</p>
+
+<h2 id='inserting_references'>Inserting references</h2>
+
+<p>You need to get references into your paper. You do this by calling the proper command with the proper argument. Recall, if you want to make some text bold face, you put it in the scope of a <code>\textbf{}</code> command. Similarly, if you want to cite a reference, you put it in the scope of the proper <code>\cite{}</code> command. But you don&#8217;t put the <em>entire</em> reference between those curly braces: you only need to put the cite key for the reference. Since each reference has a unique cite key, if you put the cite key in a <code>\cite{}</code> command, BibTeX can put the right reference in when you compile the document.</p>
+
+<p>There are two important components of creating a citation:</p>
+
+<ol>
+<li>Calling the right citation command.</li>
+
+<li>Inserting the right cite key.</li>
+</ol>
+
+<p>I&#8217;ll deal with each in turn.</p>
+
+<h3 id='the_natbib_package'>The natbib package</h3>
+
+<p>I am pretty sure that LaTeX has some default citation resources built in. But I don&#8217;t think they are that good. And it is <em>easy</em> to have exactly the commands you want. So I&#8217;ll explain how to do that.</p>
+
+<p>To generate the various references we philosophers need, you will want to use the natbib package. The package is rather well documented, so if you need more information, you should certainly check that out. (You can find documentation for <em>any</em> package in TeXShop by searching for it by name if you click on <code>Help</code> in the menu bar and then <code>Show help for package</code>. But you can find the natbib documentation <a href='http://tug.ctan.org/tex-archive/macros/latex/contrib/natbib/natbib.pdf'>here</a>.)</p>
+
+<p>There are three distinct elements involved in using the natbib package: invoking the package in your prologue, citing sources, and controlling the look of the final bibliography section.</p>
+
+<h4 id='natbib_in_the_prologue'>Natbib in the prologue</h4>
+
+<p>Calling natbib is quite easy. All you need to do is put the <code>\usepackage{natbib}</code> command somewhere in your prologue (i.e., somewhere between <code>\documentclass{article}</code> and <code>\begin{document}</code>). This will tell LaTeX to process your citations using the natbib style and will tell LaTeX how to make sense of your various citation commands.</p>
+
+<p>While we are in the prologue, I recommend using one more command. I like to use the <code>\setcitestyle{aysep={}}</code> command right after the <code>\usepacakge{natbib}</code> command in the prologue. This makes it the case that author and year are separated with a blank space rather than a comma. So I would get <code>Lewis 1986</code> instead of <code>Lewis, 1986</code>.</p>
+
+<p>So, to sum up, I put this in the prologue:</p><pre class="code">\usepackage{natbib}
+\setcitestyle{aysep={}}</pre><p>And that takes care of calling the natbib package.</p>
+
+<h4 id='natbib_citation_commands'>Natbib citation commands</h4>
+
+<p>Not all citations are alike. Sometimes you need a page number, sometimes you don&#8217;t. Sometimes the citation is a parenthetical, sometimes it is part of the subject of the sentence. Sometimes you need the author and year, sometimes you just need the year.</p>
+
+<p>Since there are multiple styles of citations you might need, there are multiple citation commands.</p>
+
+<p>Here is a chart that includes the commands I use most commonly (on the right) and their output (on the left). Recall that &#8216;LewisOPW&#8217; is my cite key for <em>On the Plurality of Worlds</em>.</p><pre class="code">Output:         Command:
+(Lewis 1986)    `\citep{LewisOPW}`
+Lewis (1986)    `\citet{LewisOPW}`
+(1986)          `\citeyearpar{LewisOPW}`</pre><p>There are other commands, but these are the ones I use most often. (I don&#8217;t aim to be comprehensive here. See pages 7, 8, and 9 of the natbib documentation for extensive and clear tables of all your options.)</p>
+
+<p>I think you can do almost everything you want with these commands. Two things you might want to do: add specific page numbers and cite multiple papers. These are easy additions.</p>
+
+<p>To add page numbers, simply insert the page number or numbers in square brackets (<code>[ ]</code>) between the cite command and the cite key. So this command <code>\citep[202--203]{LewisOPW}</code> would produce &#8216;(Lewis 1986, 202—203)&#8217; (note the double hyphen between the page numbers; you need this to get LaTeX to use the right dash for a range of numbers).</p>
+
+<p>To add a comment before the citation, put that in another set of square brackets before the page number set. To get &#8216;(see Lewis 1986, 202)&#8217; you would write <code>\citep[see][202]{LewisOPW}</code>. And if you want the &#8216;see&#8217; but not the page number, you would write <code>\citep[see][]{LewisOPW}</code>. (Since page numbers are more common than &#8216;see&#8217;s, LaTeX assumes a single argument in square brackets is a page number. So if you want text before the citation but no page number, you need the empty square brackets.)</p>
+
+<p>To cite multiple sources in one location, simply separate the cite keys with a comma. So <code>\citep{LewisNWTU,OPW}</code> will produce &#8216;(Lewis 1983, 1986)&#8217;. And if you cite multiple papers by one author in a year, LaTeX will stick the &#8216;a&#8217; on the first one, a &#8216;b&#8217; on the second, etc.</p>
+
+<h4 id='controlling_the_final_bibliography'>Controlling the final bibliography</h4>
+
+<p>One nice feature of using explicit citation commands is that it lets LaTeX automate the creation of your bibliography. If you are writing a long paper or have many sources, this is very helpful. (One of the most time-consuming and frustratingly tedious parts of writing my dissertation in a word processor was making sure every cited reference appeared in the bibliography and that every reference in the bibliography was cited. I know now that there are citation managers you can add onto most word processors, but I didn&#8217;t know that then. LaTeX builds this in.)</p>
+
+<p>But since LaTeX is really geared towards scientists, the bibliography you get is not going to look like you want. Even if you use the natbib package. But you can easily customize the bibliography&#8217;s format.</p>
+
+<p>First, we need to write the bibliography. All you need to do to do this is put the following command wherever you want the bibliography to appear: <code>\bibliography{your_bibliography_file}</code>. (Note: <em>do not</em> include the file extension here.) When LaTeX sees that command, it will print the bibliography. If you want the bibliography to be printed at the end of the paper, just stick that command one line above the <code>\end{document}</code> command.</p>
+
+<p>Now, we need to customize the look of the bibliography. You do this by specifying a style via the <code>\bibilographystyle{your_style}</code> command. You can put this anywhere in the document you like, so long as it comes between the <code>\begin{document}</code> and <code>\end{document}</code> commands. The natbib documentation suggests you put it right after the <code>\begin{document}</code> command. I like to put it right above the <code>\bibliography{your_bibliography_file}</code> command. But it doesn&#8217;t matter where you put it.</p>
+
+<p>You have two options for customizing the look of the bibliography via the <code>\bibliographystyle{}</code> command. The most straightforward is to use one of the styles that come with the natbib package. Both the <code>dcu</code> and <code>kluwer</code> styles are similar to a traditional philosophy bibliography. (Page 14 of the natbib documentation lists all the available options, if you want to nose around.) The other option is to use a custom style file.</p>
+
+<p>You can find custom style files in various places on the internet. If you find one you like, stick it in <code>/User/Library/texmf/bibtex/bst/</code>. That is one of the folders we created earlier (recall, your .bib file is in <code>/User/Library/texmf/bibtext/bib/</code>.) I use a style file that puts my bibliography in the style favored by the <em>Philosophical Review</em>. To do this, all you need to do is grab a copy of the style file (the .bst for Phil Review, as he calls it) from <a href='http://tedsider.org/'>Ted Sider&#8217;s</a> page, stick it in the right folder (described above), and then call it from the <code>\bibliographystyle{}</code> command. You can find other style files around, but this one looks nice enough, so I use it.</p>
+
+<h4 id='summary'>Summary</h4>
+
+<p>That is it. If you use natbib, these three citation commands (plus optional arguments to include page numbers and notes), and call a style file you like with the <code>\bibliographystyle{}</code> command, you&#8217;ll end up with a nice, well formatted, complete bibliography with minimal work. That is a good thing.</p>
+
+<p>So, to review, your paper will look something like this:</p><pre class="code">\documentclass[12pt]{article}
+
+% the rest of the prologue
+
+\usepackage{natbib}
+\setcitestyle{aysep={}}
+
+\begin{document}
+
+\maketitle
+
+% Body of your paper\
+
+\bibliographystyle{dcu} % or \bibliographystyle{Phil_Review} or whatever
+\bibliography{your_bibliography_file}
+
+\end{document}</pre><h3 id='bibliographic_footnotes'>Bibliographic footnotes</h3>
+
+<p>You need to follow a slightly different set of directions if you want to do full citations in footnotes (where, e.g., the first footnote that mentions a text includes the full citation information). I&#8217;ve written a detailed post <a href='http://www.charlietanksley.net/philtex/proper-footnote-citations-with-latex/'>on my blog</a>. Since this is a slightly more advanced topic, I&#8217;m not going to discuss the details here. But you can read the details on the blog, or you can download a pdf version at <a href='http://www.charlietanksley.net/pdf/latex-footnote-citations.pdf'>www.charlietanksley.net/pdf/latex-footnote-citations.pdf</a>.</p>
+
+<h3 id='texshop_and_bibdesk_integration'>TeXShop and BibDesk integration</h3>
+
+<p>There is one hitch in the bibliography management system described above. Instead of remembering that you want to cite Lewis&#8217;s <em>On the Plurality of Worlds</em>, you have to remember that you want to cite that book <em>plus</em> the unique cite key for the book. This isn&#8217;t so hard for the books and papers you cite all the time, but it is difficult for papers you cite infrequently. Coming up with a cite key generation system that works for you will help this a little bit. But it won&#8217;t really solve the problem. Thankfully, the people who wrote TeXShop have come up with an elegant solution to this problem. (A number of text editors have similar fixes for this problem. You can find a very similar solution for Vim and TextMate. In the near future I hope to play around on a PC and see how TeXWorks handles this issue. But for the time being, I&#8217;ll only talk about TeXShop.)</p>
+
+<p>In TeXShop, to use this functionality, simply start typing your cite command, then hit the F5 key once you type the open curly bracket. (BibDesk needs to be running for this to work; but if it is not open, the most recent version of TeXShop will open it. If you have trouble getting this to work, try opening BibDesk.) You&#8217;ll get a little popup window with your bibliography in it that you can navigate with the up and down arrows. Hit when you get to the entry you want, and TeXShop will stick it in your document. If you start typing part of the name, that will narrow down the list of options. So if I type <code>\citep{Lew</code> and hit F5, I get the following little list:</p>
+
+<p><img src='images/latex/bibdesk_integration.png' alt='image' /></p>
+
+<p>This is, obviously, a quite handy feature. Just select your reference, hit , then type your <code>}</code> and you are done.</p>
+
+<h3 id='printing_your_citations_and_bibliography'>Printing your citations and bibliography</h3>
+
+<p>Once you have written a paper full of <code>\citet{}</code> commands and have called the bibliography in a style you like, you need to compile your paper correctly. If you just compile it using LaTeX, you will not get a bibliography. You will get a question mark everywhere you wanted a citation, and you will get a blank section called &#8216;References&#8217; at the end of the document.</p>
+
+<p>To get your bibliography and citations to print, you need to compile your document in multiple steps. First, compile it using LaTeX. This creates a list of the cite keys you used (I think that is what it does.) Then, compile it using BibTeX (you&#8217;ll find this in the same menu as the &#8216;compile with LaTeX&#8217; feature). This generates a file with the relevant bibliographic information. Now compile your document with LaTeX <em>again</em>. This is the step where LaTeX is told what each cite key corresponds to, and it isn&#8217;t until this step that you get question marks replaced with citations. I think that should do it. But I always compile with LaTeX one more time just to be sure all the details get ironed out.</p>
+
+<p>So when you are ready to get a pdf file, you will</p>
+
+<ol>
+<li>Run LaTeX.</li>
+
+<li>Run BibTeX.</li>
+
+<li>Run LaTeX.</li>
+
+<li>Run LaTeX.</li>
+</ol>
+
+<p>Then you are done. You have your first full paper.</p>
+
+<p>Though I think a big selling point of LaTeX is the fact that you can produce beautifully typeset documents with a minimum of effort, I&#8217;d be lying if I said I just use the basic article document class with no adornments. You can while away many an afternoon getting your papers to look <em>exactly</em> like you want. You can argue about whether this is time wasted. But if you are interested in tweaking your document in this way, I&#8217;ll discuss some popular packages and options in the next section.</p><a href="#page-navigation">Table of Contents</a></section><section><a name="customizing"></a><h2>Make it Your Own</h2><p>You likely want to customize your paper in some way or other. At the very least, you&#8217;ll need to double-space it to submit it to a journal or conference. But you also might want to use a different font, use some fancy math or logic symbols, add a custom header or footer, or change the margins of your paper. In this document, I&#8217;ll tell you enough that you&#8217;ll be able to do each of those things to some degree or other (LaTeX is complicated; I don&#8217;t claim to be comprehensive here).</p>
+
+<p>Note: I am going to talk about using various packages in this document. I am pretty sure that most of these are included in a standard TeX distribution. If you don&#8217;t have one of these packages, either use your package manager (TeX Live Utility for the Mac; I think that MikTeX might actually download packages you need on the fly, i.e., if you specify a package in the prologue that you do not have installed, MikTeX will install it without you doing anything), or search for the package at <a href='http://www.ctan.org/'>CTAN</a> and follow the directions to install it.</p>
+
+<h3 id='spacing'>Spacing</h3>
+
+<p>There are three main options for double-spacing your paper.</p>
+
+<p>The first is to use the setspace package. Anytime you &#8216;use the X package&#8217;, for any package X, you do so by adding it in your prologue via a <code>\usepackage{}</code> command, perhaps with some additional arguments, and perhaps with some additions to the body of the document. To use the setspace package you need to do two things:</p>
+
+<ol>
+<li>Add <code>\usepackage{setspace}</code> to your prologue.</li>
+
+<li>Add <code>\doublespace</code> at the start of your document (likely after <code>\maketitle</code>).</li>
+</ol>
+
+<p>If you want to single-space the bibliography, you can just add <code>\singlespace</code> before the <code>\makebibliography</code> command. Anything you want single-spaced can be made single-spaced by adding this command (and just add the <code>\doublespace</code> command when you want to switch back).</p>
+
+<p>I like the <code>setspace</code> package. One thing it <em>does not</em> do is double-space your footnotes. I like that, but some journals do not. To double-space <em>everything</em>, you&#8217;ll want to use the second of the three spacing options.</p>
+
+<p>The second option is to redefine the default spacing between baselines (the bottom of letters like &#8216;b&#8217;). You do this by adding the following line to your prologue:</p><pre class="code">\renewcommand{\baselinestretch}{2}</pre><p>If you prefer 1.5 spacing, simply put a 1.5 in for the 2. Since this redefines the baseline for the document, it will change the spacing for footnotes as well as the main text.</p>
+
+<p>The third option is a bit more powerful than the first two. It makes more global changes than just double-spacing things, but these are changes you might like (specifically, it converts footnotes to endnotes, changes the spacing of the document, alters the indentation of block quotes, and uses smaller fonts for the title, headers, etc.). <a href='http://centria.fct.unl.pt/~greg/index.html'>Gregory Wheeler</a> has put together a package specifically for philosophy papers. To use it, just go to his <a href='http://centria.fct.unl.pt/~greg/latex/phil-style.html'>LaTeX for Philosophers</a> page and download the <code>philosophy.sty</code> package. If you are on a Mac, put this in the <code>user/Library/texmf/tex/latex</code> directory you manually created; if you are on a PC, I <a href='http://www.artofproblemsolving.com/LaTeX/AoPS_L_GuidePack.php'>gather</a> that you ought to put it in the <code>latex</code> folder within MikTeX, where this will likely be <code>C:\Program Files\MiKTeX 2.5\tex\latex</code>, though the version number might differ.</p>
+
+<p>Once you have downloaded <code>philosophy.sty</code> and put it in a directory where LaTeX can find it during compiling, you need to specify that the package be used. This will require a change to your prologue and a change near your bibliography.</p>
+
+<p>Put the following in your prologue:</p><pre class="code">\usepackage{endnotes,philosophy}</pre><p>To get the endnotes to print, you need to explicitly put a <code>\noteshere</code> command where you want the notes. This will likely be just before or just after your bibliography. Add this command in and your paper will be double-spaced. It will also have what you might think is a more traditional look.</p>
+
+<h3 id='fonts'>Fonts</h3>
+
+<p>At some point you will likely want to use a new font. LaTeX is quite old, and it is made to interact with only a small set of fonts. The easiest way to use a new font is to use XeTeX. (For our purposes, we can think of XeTeX as a super-set of the LaTeX commands&#8212;if you compile your paper using XeTeX, you can use all the LaTeX commands and packages, but you can also use some packages that go beyond LaTeX. Relevant here are the packages that let you use fonts easily.) If you use XeTeX, your final pdf file can use <em>any</em> font you have on your computer.</p>
+
+<p>To use XeTeX you need to do three things.</p>
+
+<p>First, you need to insert the following at the very start of your prologue (<em>even before the</em> <code>documentclass{article}</code> <em>command</em>):</p><pre class="code">%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode</pre><p>Then you need to stick the following in your prologue somewhere:</p><pre class="code">\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont[Mapping=tex-text]{Hoefler Text}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+\setmonofont[Scale=MatchLowercase]{Andale Mono}</pre><p>If you are using a serif font in your document, just change <code>Hoefler Text</code> to any font you want to use—you could even use Times New Roman if you need to. (If you are using a sans-serif, change the <code>Gill Sans</code> to whatever you like.)</p>
+
+<p>Now write your paper like normal. When you are ready to compile it, do not compile it with LaTeX. Instead, compile it with XeTeX (this will clearly be an option wherever you ordinarily select to compile with LaTeX).</p>
+
+<p>The major text editors have an XeTeX document template that will include all these basic bits for you. In fact, I pulled the prologue elements above directly from the XeTeX template in <a href='http://www.uoregon.edu/~koch/texshop/'>TeXShop</a>.</p>
+
+<h3 id='margins'>Margins</h3>
+
+<p>The default LaTeX margins seem huge at first. They are larger than 1 inch in order to make the document easier to read. But you might want to change the margins because you think they are too big or because you need specific margins for a dissertation or thesis. Changing the margins is easy. There is (or should be) a line in your prologue that says <code>\usepackage{geometry}</code>. This package can take margin sizes as arguments. So to get 1 inch margins all around, just write</p><pre class="code">\usepackage[right=1in,left=1in,top=1in,bottom=1in]{geometry}</pre><p>And if you want larger or smaller margins on either side, just change that number.</p>
+
+<h3 id='symbols'>Symbols</h3>
+
+<p>One of the beauty of LaTeX is the way it typesets formulae. If you write logical notation, LaTeX is wonderful.</p>
+
+<p>Each symbol is called by a command, and each command has a specific mode. Just as you type a command to make some text italic, you type a command to get LaTeX to print a symbol. For example, the code for the existential quantifier (the backwards &#8216;E&#8217;) is <code>\exists</code>. And the universal quantifier is called by the <code>\forall</code> command.</p>
+
+<p><em>Modes.</em> Most of the commands you want for logic can only be used in <em>math mode</em>. To put a bit of text in math mode, surround it with either (a) dollar signs or (b) backslashes and parentheses. So you would write either <code>$logic stuff$</code> or <code>\(logic stuff\)</code>. To write &#8216;there is an x&#8217; in symbolic notation, I would type <code>\(\exists (x)\)</code>. (The space is necessary. It tells LaTeX that the command is finished. If you typed <code>\(\existsx\)</code>, LaTeX would think you meant some other command, the <code>\existsx</code> command.) I have always used the dollar signs, but you can use the backslash parentheses method as well.</p>
+
+<p>All text in math mode is italicized, though not all symbols are. So if you don&#8217;t want your &#8216;x&#8217; italicized in the above example, you would want to type <code>\(\exists\)(x)</code> (the dollar sign terminates the command, so you do not want an extra space here).</p>
+
+<p>Ordinarily, you write in <em>text mode</em>. There are some symbols you can use in text mode. The most common are the accents on letters (like the little hat on the &#8216;u&#8217; in <em>Noûs</em>) and, for me at least, the little section symbol. You get the section symbol by typing <code>\S</code> in text mode (so <code>\S 2</code> for example—don&#8217;t forget the space). You get the accents by typing the right command followed by the letters it ranges over in brackets (so <code>No\^{u}s</code>, for example). Strictly, the braces are not necessary, but they don&#8217;t hurt, and I like to use them because they help me see what is going on.</p>
+
+<p><em>Combining math and text.</em> Sometimes you might want to write out a premise or claim using a combination of symbols and text. Any text within the scope of the math mode will be italicized (and some letters will look kind of funny). So you should make sure the words are outside of the scope of the math mode. The most elegant way to do this is to just wrap the words in a <code>\mathrm{}</code> or <code>\text{}</code> command. For example, you might write <code>\(\exists (x)\ \mathrm{some\ text}\ \therefore\ y.\)</code> (more on those extra backslashes in a moment). The (less elegant) alternative is to end the math mode before your text and then start a new math mode before your next symbol. I can see some situations where this might be a good option, but I think the <code>\mathrm{}</code> is better in most instances.</p>
+
+<p><em>Spacing in math mode.</em> Spaces are collapsed in math mode. If you leave a dozen spaces between two characters, they will be eliminated and your characters will appear side by side. This will happen even when you are inside a <code>\mathrm{}</code> command. To avoid having all your words and symbols run together, you merely need to stick a backslash at the end of every word you want followed by a space. Hence the extra backslashes in my example in the last paragraph.</p>
+
+<p>There are a number of useful resources for learning or entering these commands. Gregory Wheeler put together a shortish pdf document that lists all the symbols you will probably need. You can find that <a href='http://centria.fct.unl.pt/~greg/papers/Symbols.pdf'>here</a>. There is a very long, comprehensive guide to symbols at CTAN <a href='http://www.ctan.org/tex-archive/info/symbols/comprehensive/symbols-a4.pdf'>here</a>.</p>
+
+<p>Perhaps more helpful than those guides is your text editor. If you are using TeXShop, just click <code>Window -&gt; LaTeX Panel</code> in the menu bar and you will get a floating window listing all the symbols you might want (<em>plus</em> all the environments you might want, like &#8216;itemize&#8217;, &#8216;quote&#8217;, etc.). Just click the symbol you want and TeXShop will put it in the document, though it will not add the dollar signs for math mode-only symbols. I am pretty sure that TeXnicCenter has something similar. But from a first-pass, I don&#8217;t seen any such option in TeXworks. If there isn&#8217;t such a helpful menu, Wheeler&#8217;s short guide is easy enough to use, and you will learn the codes you use often pretty quickly. (There is also a free iPhone app called <a href='http://www.appstorehq.com/latexhelp-iphone-5572/app'>LaTeX Help</a> that lists all the basic symbols.)</p>
+
+<p>Some symbols are only available to you if you use the right package. I follow TeXShop&#8217;s lead and always include the <code>\usepackage{amssymb}</code> command in my prologue, as this allows me to use all the basic math symbols. And there are some symbols you might want to use that aren&#8217;t defined in a package. At his <a href='http://centria.fct.unl.pt/~greg/latex/phil-style2.html'>LaTeX for for Philosophers</a> page, Gregory Wheeler has a list of symbols of interest to logicians. These aren&#8217;t part of any package, but he describes what you need to put in the prologue of your paper to be able to use the particular symbol you want.</p>
+
+<h3 id='list_environments'>List Environments</h3>
+
+<p>The LaTeX list environment is very helpful for writing philosophical papers. Using it will allow you to write nice numbered premise arguments and inset definitions.</p>
+
+<p>There are three kinds of lists: itemized lists, enumerated lists, and description lists. They are similar in structure, but they produce different sorts of lists.</p>
+
+<h4 id='itemized_lists'>Itemized lists</h4>
+
+<p>An itemized list is a bulleted list. It is unordered. To create an itemized list you simply write</p><pre class="code">\begin{itemize}
+  \item Your first item.
+  \item Your second item.
+  \item Etc.
+\end{itemize}</pre><p>(Your text editor likely has a command or a button for inserting each sort of list.)</p>
+
+<h4 id='enumerated_lists'>Enumerated lists</h4>
+
+<p>An <em>enumerated</em> list is a numbered list. This is the sort of list you would use for an argument. To write a list like this, you replace <code>itemize</code> above with <code>enumerate</code>:</p><pre class="code">\begin{enumerate}
+  \item First item.
+  \item Second item.
+  \item Third item.
+\end{enumerate}</pre><p>This will give you the classic:</p>
+
+<blockquote>
+<ol>
+<li>First item.</li>
+
+<li>Second item.</li>
+
+<li>Third item.</li>
+</ol>
+</blockquote>
+
+<p>There are a couple of ways you might want to customize such a list. You might want to use different numbers (use (1*), (2*), etc.), you might want to start counting at a higher number, and you might want to use the therefore sign instead of the last number.</p>
+
+<p><em>Changing numbers.</em> To change the numbers your argument uses, you need to do two things. First, you need to insert the <code>\usepackage{enumerate}</code> command somewhere in your prologue. Second, after the <code>\begin{enumerate}</code> command put the counter you want to use in square braces. For example, if I want to enumerate with (1*), etc., I would write</p><pre class="code">\begin{enumerate}[(1*).]
+  \item First item.
+  \item Second item.
+  \item Third item.
+\end{enumerate}</pre><p>Note that <em>all and only</em> the characters you put in those square braces will show up in your list (though it will count up from 1). So if you want parentheses around the number, add them; and if you want a period after the number, add it.</p>
+
+<p><em>Changing starting number.</em> Changing the starting number is pretty straightforward. You merely need to insert the <code>\setcounter{enumi}{desired number - 1}</code> command just after the <code>\begin{enumerate}</code> command, setting the number in the curly braces after <code>{enumi}</code> to one less than the first number you want in your list. So if I need to pick up my argument with premise five I would write</p><pre class="code">\begin{enumerate}
+\setcounter{enumi}{4}
+  \item Fifth item.
+  \item Sixth item.
+\end{enumerate}</pre><p><em>Ending with a conclusion.</em> You are using LaTeX. You might as well make use of the symbols at your disposal. So to wrap your argument up with the little three dot &#8216;therefore&#8217; sign instead of the next number in the list, just do the following:</p><pre class="code">\begin{enumerate}
+  \item First item.
+  \item Second item.
+  \item[\(\therefore\)] Conclusion.
+\end{enumerate}</pre><p>The square brackets directly after an <code>\item</code> command override the item counter with whatever you put there. In this case, I have set the counter for the final list item to be the symbol called by the math mode <code>\therefore</code> command. To make this work, you have to use it in math mode. (Note that if you needed to, you could change the counter of <em>any</em> premise to <em>anything</em> you like.)</p>
+
+<h5 id='an_alternative'>An alternative</h5>
+
+<p>Often in LaTeX, there is more than one way to achieve your goal. Kevin Klement suggested to me that there is a better way of manipulating your numbered lists. I can&#8217;t decide if it is a better way or not. I think each has advantages. I&#8217;ll describe this other method here. This method has one clear advantage: you can easily <em>resume</em> the numbering of a list that has been interrupted by text.</p>
+
+<p>This method relies on the <code>enumitem</code> package. For a normal numbered list, you just use the same <code>\begin{enumerate} ... \item ... \end{enumerate}</code> commands like above. But here is an example to show how the more complicated features work, starting with a bit of the prologue:</p><pre class="code">... start prologue
+\usepackage{enumitem}
+... end prologue
+
+\begin{enumerate}[start=4, label=(\arabic**).]
+\item Fourth item.
+\item Fifth item.
+\end{enumerate}
+
+Some text explaining something or other.
+
+\begin{enumerate}[resume, label=(\arabic**).]
+\item Sixth item.
+\item Seventh item.
+\end{enumerate}</pre><p>The forgoing illustrates three key features of the <code>enumitem</code> package for numbered list management. The <code>\begin{enumerate}</code> command is followed by an optional list of arguments in square brackets. Those arguments dictate what the list will look like. A <code>start=#</code> argument dictates the starting number for the list (note that if you put &#8216;4&#8217; here the list starts with &#8216;4&#8217;, unlike the method above. Second, the <code>label=</code> argument dictates what the counter looks like. <code>\arabic*</code> gives you standard numbers, <code>alph*</code> gives you lowercase letters, <code>\Alph*</code> gives you uppercase letters, and <code>\roman*</code> and <code>\Roman*</code> give you lower and uppercase roman numerals, respectively. (Note that even if you are counting with letters, if you want to start counting at &#8216;d&#8217; you write <code>start=4</code>.) Third, if you want the current list to continue where the last list left off, you can write <code>resume</code> instead of <code>start=#</code>. This is nice&#8212;if you add or remove elements from the earlier list or lists, you don&#8217;t have to manually update all your other lists. But do note that you need to specify the counter style every time, as in my example.</p>
+
+<h4 id='description_lists'>Description lists</h4>
+
+<p>The <em>description list</em> is a way of providing an explicit definition. You write a description list using the following commands:</p><pre class="code">\begin{description}
+  \item[Thesis] My thesis.
+\end{description}</pre><p>The term you are defining goes in the square braces after the <code>\item</code> command. (And if you want to add elements to your list, add them with more <code>\item</code> commands.) In the current example, the output will be a block indented paragraph that looks like this:</p>
+
+<blockquote>
+<p><strong>Thesis:</strong> My thesis.</p>
+</blockquote>
+
+<p>The description list is, obviously, a great way to highlight theses you want to make clear and then refer back to.</p>
+
+<h3 id='headers'>Headers</h3>
+
+<p>The default LaTeX paper header and footer is kind of bland. It just includes the page number, centered in the footer. Not bad, but not great, either. To customize this, use the fancy header package. This is likely installed by default; if not, use TeX Live Utility or let MikTeX install it for you. You can find the full documentation <a href='http://mirror.unl.edu/ctan/macros/latex/contrib/fancyhdr/fancyhdr.pdf'>here</a>, but here are the basics you need to know to use it right away.</p>
+
+<p>First, put the following in your prologue:</p><pre class="code">\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{}\rfoot{}
+\renewcommand{\headrulewidth}{0.0pt}</pre><p>Whatever you put in the scope of <code>\lhead{}</code> will appear in the header on the left side. <code>\chead{}</code> and <code>\rhead{}</code> put text in the center and right side of the header, respectively. And the <code>\lfoot{}</code>, etc. commands do the same for the footer.</p>
+
+<p>The <code>lastpage</code> package is optional. If you use it, then you can put a &#8216;page m of n&#8217; kind of page number in the header or footer. To do this, just put <code>\thepage\ of \pageref{LastPage}</code> wherever you want that to appear. (Note that you need to compile the paper twice with LaTeX to get this to work right&#8212;the first time, LaTeX counts the pages; the second time, it enters the number in the right place.)</p>
+
+<p>Second, you want to add a <code>\thispagestyle{empty}</code> command right after your <code>\maketitle</code> command. This gives you a blank first page. If you wanted, you could change the &#8216;empty&#8217; out for a &#8216;fancy&#8217;, and your fancy header would show up on page one. But if you have anything in the header, that will show up above your title. And that just looks weird.</p>
+
+<h3 id='more'>More</h3>
+
+<p>There are lots of great packages you can use to customize your LaTeX document. Peter Smith&#8217;s <a href='http://www.logicmatters.net/latex-for-logicians/'>LaTeX for Logicians</a> is a great resource once you have the basics I have detailed here down.</p>
+
+<p>Over the course of time, I plan on detailing the packages I use and things I learn about LaTeX on my blog devoted to matters technical <a href='http://www.charlietanksley.net/philtex'>PhilTeX</a>. Since I don&#8217;t learn something new about LaTeX every day, the posting is light. But if you&#8217;ve found this guide helpful, I think you&#8217;ll find the content over there helpful as well.</p>
+
+<p>An update on PhilTeX: PhilTeX is now a group blog. There are a handful of contributors posting informative and helpful posts each week. This is much better than when it was just me writing for it!</p>
+
+<p>If you have any questions feel free to email at <a href='mailto:charlie.tanksley@gmail.com'>charlie.tanksley@gmail.com</a>.</p><a href="#page-navigation">Table of Contents</a></section><section><a name="pdf"></a><h2>Read it offline</h2><p>If you'd like to have a PDF version of this guide for any reason, you can get one at <a href="/pdfs/latex-guide.pdf">http://www.charlietanksley.net/pdfs/latex-guide.pdf</a></p><a href="#page-navigation">Table of Contents</a></section></div></div></div><footer></footer></body></html>
