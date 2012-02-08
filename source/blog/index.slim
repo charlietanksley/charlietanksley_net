@@ -1,0 +1,20 @@
+header
+  h1 Charlie Tanksley
+
+nav#site-nav
+  ul
+    li <a href='/'>Home</a>
+    li <a href='/#connect'>Connect</a>
+    li <a href='http://www.charlietanksley.net/philtex'>PhilTeX</a>
+
+- data.blog.articles.each do |article|
+  article.blogpost
+    .publication-information
+      h1
+        a href="#{article.url}" == article.title
+      time == article.date.strftime('%b %e %Y')
+    
+    .summary
+      == article.summary
+
+    a.read-more href="#{article.url}" Read more

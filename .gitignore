@@ -2,3 +2,4 @@
 .sass-cache/
 b/
 tmp/
+config/deploy.yml

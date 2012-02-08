@@ -252,6 +252,17 @@ section {
     padding: 0.5em; }
 }
 
+pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap !important;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  max-width: 30em; }
+
+article.blogpost {
+  padding-bottom: 2em; }
+
 h2 {
   font-size: 1.5em; }
 h3 {

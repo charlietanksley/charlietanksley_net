@@ -6,4 +6,5 @@ gem 'middleman-blog'
 
 gem 'rb-fsevent'
 
+gem 'redcarpet'
 gem 'slim'
