@@ -1,0 +1,61 @@
+<!DOCTYPE html><!--ht Paul Irish - http://front.ie/j5OMXi--><!--[if lt IE 7]><html class="no-js ie6" lang="en"></html><![endif]--><!--[if IE 7]><html class="no-js ie7" lang="en"></html><![endif]--><!--[if IE 8]><html class="no-js ie8" lang="en"></html><![endif]--><!--[if (gte IE 9)|!(IE)]><html class="no-js" lang="en"></html><![endif]--><html><head><meta charset="utf-8" /><title>Charlie Tanksley</title><meta content="Charlie Tanksley's personal site" name="description" /><meta content="Charlie Tanksley" name="author" /><!--/ht Andy Clarke - http://front.ie/lkCwyf--><meta content="on" http-equiv="cleartype" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><!--/ht Jeremy Keith - http://front.ie/mLXiaS--><link type="text/css" media="screen" rel="stylesheet" href="../../stylesheets/global.css" /><link type="text/css" media="screen" rel="stylesheet" href="../../stylesheets/layout.css" /><script type="text/javascript" src="../../javascripts/modernizr-1.7.min.js"></script></head><body class="blog blog_2011 blog_2011_vim-navigation-with-lustyeplorer-and-lustyjuggler cf" id="container"><div id="main" role="main"><header><h1>Charlie Tanksley</h1></header><nav id="site-nav"><ul><li><a href='/'>Home</a></li><li><a href='/#connect'>Connect</a></li><li><a href='http://www.charlietanksley.net/philtex'>PhilTeX</a></li></ul></nav><article class="article"><div class="publication-information"><h1>Vim Navigation With LustyExplorer and LustyJuggler</h1><time>Oct 18 2011</time></div><p>There are a plethora of navigation plugins for Vim: Command-T, FuzzyFinder, NERDTree, and Ctrlp are all popular plugins that fit this description. I&#8217;ve tried all these, but none of them were quite right for me. I don&#8217;t have any particular qualms with any of them; it&#8217;s just that none of them seemed quite right for me.</p>
+
+<p>My favorite plugin in this space is <a href='[http://www.vim.org/scripts/script.php?script_id=1890]'>LustyExplorer</a>.<br />Specifically, I use the combination plugin <a href='[https://github.com/sjbach/lusty]'>Lusty</a>, which combines LustyExplorer (the filesystem explorer) and LustyJuggler (the buffer explorer).</p>
+
+<h2 id='why_lustyexplorer'>Why LustyExplorer?</h2>
+
+<p>The main reason I liked LustyExplorer was that, right off the bat, I had to really helpful keybindings: <code>&lt;leader&gt;lf</code> to open the file explorer in the main directory, and <code>&lt;leader&gt;lr</code> to open the file in the current directory. So in a Rails app if I <code>mvim spec/models/something_spec.rb</code> I can <code>&lt;leader&gt;lf</code> to open the file explorer back at the application root. (So <code>&lt;leader&gt;lf</code> then <code>ge&lt;CR&gt;</code> will open my Gemfile.) But if I <code>&lt;leader&gt;lr</code> I get a file explorer opened in the <code>spec/models</code> directory. Very convenient.</p>
+
+<h2 id='the_juggler'>The juggler</h2>
+
+<p>Another nice feature of the dual Lusty plugin is that you get a buffer explorer along with it. By default this is bound to <code>&lt;leader&gt;lb</code>. So when I&#8217;m working on this post and my post about emacs, I can switch to the other post by typing <code>&lt;leader&gt;lb em&lt;CR&gt;</code>. Two birds, one stone (well, it&#8217;s a combination stone&#8230;).</p>
+
+<h2 id='the_file_explorer'>The file explorer</h2>
+
+<p>I was inspired by Gary Bernhardt&#8217;s discussion of Command-T in one of his <a href='[https://www.destroyallsoftware.com/screencasts/catalog/file-navigation-in-vim]'>Destroy All Software screencasts</a>. He likes Command-T because he can never has to look at the names of the files he is trying to open: just typing <code>amacc&lt;CR&gt;</code> at the prompt, for example, might be enough information to open up <code>app/models/accounts.rb</code>, and he never has to look and see if he has the right file (this is his knock on NERDTree). I kind of buy the knock on NERDTree&#8212;just too much navigating&#8212;but I don&#8217;t buy it generally. It is true that one difference between Command-T and LustyExplorer is that to get to <code>app/models/accounts.rb</code> I would have to type <code>a&lt;tab&gt;m&lt;tab&gt;acc&lt;CR&gt;</code>&#8212;LustyExplorer <em>does</em> search fuzzily, as it were, but it <em>doesn&#8217;t</em> search recursively. You have to type <code>TAB</code> to move into a subdirectory.</p>
+
+<p>That seems a bit bad to me, but not <strong>that</strong> bad. It isn&#8217;t that bad because I simply cannot remember all the files I want to navigate to. :) I often can&#8217;t remember what a given file is called, so I have to look anyway. So losing recursive searching doesn&#8217;t seem like too much of a loss to me.</p>
+
+<p>One of the things I thought Bernhardt did that was really cool is mapping keys to open his Command-T search in certain frequently used directories. Turns out you can do the same thing in LustyExplorer.<br />Here are my mappings for working with Rails:</p>
+
+<pre><code>map &lt;leader&gt;ff :LustyFilesystemExplorerFromHere&lt;CR&gt;
+map &lt;leader&gt;fm :LustyFilesystemExplorer app/models&lt;CR&gt;
+map &lt;leader&gt;fc :LustyFilesystemExplorer app/controllers&lt;CR&gt;
+map &lt;leader&gt;fv :LustyFilesystemExplorer app/views&lt;CR&gt;
+map &lt;leader&gt;fh :LustyFilesystemExplorer app/helpers&lt;CR&gt;
+map &lt;leader&gt;fl :LustyFilesystemExplorer lib&lt;CR&gt;
+map &lt;leader&gt;fp :LustyFilesystemExplorer public&lt;CR&gt;
+map &lt;leader&gt;fs :LustyFilesystemExplorer specs&lt;CR&gt;
+map &lt;leader&gt;ft :LustyFilesystemExplorer test&lt;CR&gt;</code></pre>
+
+<h2 id='more_advanced_file_explorer_movements'>More advanced file explorer movements</h2>
+
+<p>One minor complaint about LustyExplorer: the documentation is not in the proper file. It shows up in the main plugin file, not in the doc file.<br />This information comes from the plugin file, but it is worth repeating here because it is easy to overlook.</p>
+
+<p>Default keybindings:</p>
+
+<pre><code>&lt;Leader&gt;lf  - Opens the filesystem explorer.
+&lt;Leader&gt;lr  - Opens the filesystem explorer from the
+              directory of the current file.
+&lt;Leader&gt;lb  - Opens the buffer explorer.
+&lt;Leader&gt;lg  - Opens the buffer grep, for searching through
+              all loaded buffers</code></pre>
+
+<p>Navigating within the prompt/quickfix window:</p>
+
+<pre><code>&lt;Enter&gt;  open selected match
+&lt;Tab&gt;    open selected match
+&lt;Esc&gt;    cancel
+&lt;C-c&gt;    cancel
+&lt;C-g&gt;    cancel
+
+&lt;C-t&gt;    open selected match in a new [t]ab
+&lt;C-o&gt;    open selected match in a new h[o]rizontal split
+&lt;C-v&gt;    open selected match in a new [v]ertical split
+
+&lt;C-n&gt;    select [n]ext match
+&lt;C-p&gt;    select [p]revious match
+&lt;C-f&gt;    select [f]orward one column
+&lt;C-b&gt;    select [b]ack one column
+
+&lt;C-u&gt;    clear prompt</code></pre></article><div class="sidebar"><h2>Recent posts</h2><ul></ul><li><a href="&#47;blog&#47;2011&#47;vim-navigation-with-lustyeplorer-and-lustyjuggler.html">Vim Navigation With LustyExplorer and LustyJuggler</a></li><li><a href="&#47;blog&#47;2011&#47;factory-girl-and-sinatra.html">Factory Girl, Sinatra, and Associations</a></li></div></div><footer></footer></body></html>

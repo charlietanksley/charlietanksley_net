@@ -1,0 +1,78 @@
+<!DOCTYPE html><!--ht Paul Irish - http://front.ie/j5OMXi--><!--[if lt IE 7]><html class="no-js ie6" lang="en"></html><![endif]--><!--[if IE 7]><html class="no-js ie7" lang="en"></html><![endif]--><!--[if IE 8]><html class="no-js ie8" lang="en"></html><![endif]--><!--[if (gte IE 9)|!(IE)]><html class="no-js" lang="en"></html><![endif]--><html><head><meta charset="utf-8" /><title>Charlie Tanksley</title><meta content="Charlie Tanksley's personal site" name="description" /><meta content="Charlie Tanksley" name="author" /><!--/ht Andy Clarke - http://front.ie/lkCwyf--><meta content="on" http-equiv="cleartype" /><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><!--/ht Jeremy Keith - http://front.ie/mLXiaS--><link type="text/css" media="screen" rel="stylesheet" href="../../stylesheets/global.css" /><link type="text/css" media="screen" rel="stylesheet" href="../../stylesheets/layout.css" /><script type="text/javascript" src="../../javascripts/modernizr-1.7.min.js"></script></head><body class="blog blog_2011 blog_2011_factory-girl-and-sinatra cf" id="container"><div id="main" role="main"><header><h1>Charlie Tanksley</h1></header><nav id="site-nav"><ul><li><a href='/'>Home</a></li><li><a href='/#connect'>Connect</a></li><li><a href='http://www.charlietanksley.net/philtex'>PhilTeX</a></li></ul></nav><article class="article"><div class="publication-information"><h1>Factory Girl, Sinatra, and Associations</h1><time>Sep  2 2011</time></div><p>I just spent more time than I&#8217;d care to admit trying to sort out getting Sinatra and Factory Girl to work together for testing purposes, so I thought I&#8217;d share what I learned here with the hopes that it might make life easier for someone else (or me in the future&#8230;).</p>
+
+<h2 id='basic_setup'>Basic setup</h2>
+
+<p>The setup is straightforward enough. I should note that I&#8217;m using Rspec here. The only thing that was tricky for me was that I needed to explicitly require my factories file (you don&#8217;t have to do this in Rails; my guess is that the <code>factory_girl_rails</code> plugin takes care of this:</p>
+
+<pre><code># Gemfile
+gem &#39;factory_girl&#39;, &#39;~&gt; 2.0.0&#39;
+
+# spec/factories.rb
+## Factories go here. More on that in a moment
+
+# spec/spec_helper
+require &#39;factory_girl&#39;
+require &#39;factories&#39;
+RSpec.configure do |config|
+  # if you want to build(:user) instead of Factory.build(:user)
+  config.include Factory::Syntax::Methods
+end</code></pre>
+
+<p>I was used to the behavior in Rails, so it took me longer than I would&#8217;ve liked to realize you need to require the factories file. So that is that: setup is pretty easy.</p>
+
+<p>One more thing to note: if you are building a modular Sinatra application (that is, if your application inherits from Sinatra::Base), then you&#8217;ll know that your models always referenced at AppName::ModelName. You do this in your factories, too:</p>
+
+<pre><code>Factory.define :group, :class =&gt; MoxieApp::Group do |t|</code></pre>
+
+<h2 id='associations'>Associations</h2>
+
+<p>The really tricky part for me was sorting out associations. Here are my basic models, using DataMapper:</p>
+
+<pre><code>class User
+  include DataMapper::Resource
+
+  property :id,         Serial
+  property :email,      String
+  property :group_id,   Integer
+
+  belongs_to :group
+end
+
+class Group
+  include DataMapper::Resource
+
+  property :id,         Serial
+  property :name,       String
+
+  has n, :users
+end</code></pre>
+
+<p>The name of the group a user belongs to is pretty important to my application (it determines when some resources are visible). So for any user I&#8217;m testing, the group_id needs to match up to an actual group. So it seems important that the User factory I test with belongs to an existing group.</p>
+
+<p>If you look around on the googles you&#8217;ll find a handful of ways to do this. The ThoughtBots people have <a href='http://robots.thoughtbot.com/post/254496652/aint-no-calla-back-girl'>a blog post</a> detailing how to do some really complicated has_many associations using callbacks. I played around with this but couldn&#8217;t figure it out. Even if I could have gotten it to work, it seems way more complicated than I needed. At various places <a href='https://github.com/thoughtbot/factory_girl/wiki/Usage'>in the documentation</a> you can find this simple example for creating associations:</p>
+
+<pre><code>FactoryGirl.define :post do
+  factory :user do
+    name &#39;User name&#39;
+  end
+
+  factory :post do
+    name &quot;Post name&quot;
+    association :user
+  end
+end</code></pre>
+
+<p>The problem with this is that while there is clearly a user associated with a post, you aren&#8217;t using that information in any way. In my experiments, the <code>user_id</code> wasn&#8217;t set via this <code>association</code> call. It isn&#8217;t entirely clear to me what this does.</p>
+
+<p>But there is something here. I found an old blog post on <a href='http://www.snowblink.co.uk/archives/2009/04/24/factory-girl-and-has-many-through'>has_many_through associations and Factory Girl</a> that recommended using the <code>association</code> call within a block. Here&#8217;s what it looks like in practice in my factories:</p>
+
+<pre><code>Factory.define :group, :class =&gt; MoxieApp::Group do |t|
+  t.name &#39;Group&#39;
+end
+
+Factory.define :user, :class =&gt; MoxieApp::User do |t|
+  t.sequence(:email) { |n| &quot;email#{n}@factory.com&quot; }
+  t.group_id { |a| a.association(:group).id }
+end</code></pre>
+
+<p>Whenever a User is created, a Group is created and its id is used as the group_id for my User. Problem solved.</p></article><div class="sidebar"><h2>Recent posts</h2><ul></ul><li><a href="&#47;blog&#47;2011&#47;vim-navigation-with-lustyeplorer-and-lustyjuggler.html">Vim Navigation With LustyExplorer and LustyJuggler</a></li><li><a href="&#47;blog&#47;2011&#47;factory-girl-and-sinatra.html">Factory Girl, Sinatra, and Associations</a></li></div></div><footer></footer></body></html>
