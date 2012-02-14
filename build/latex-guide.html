@@ -110,7 +110,7 @@
 
 <p>Every paper you write will need to include the same basic commands. It must open with a prologue. And it must end with an <code>\end{document}</code> command. Your editor will likely have some templates you can choose from that will do all this for you. Let them do the work when you are getting started (eventually, you can modify the basic template and make your own template; but that is a few steps down the road). When you open up TeXShop for example, there is a button marked &#8216;Templates&#8217; at the top. If you click on that, you will get a drop-down menu of template options. Start with the LaTeX template and you will have <em>most</em> of the prologue written for you.</p>
 
-<p><img src='images/latex/TeXShop_templates.png' alt='Selecting the LaTeX template' /></p>
+<p><img alt='Selecting the LaTeX template' src='images/latex/TeXShop_templates.png' /></p>
 
 <p>Here is what the TeXShop LaTeX template (henceforth, the LaTeX template) looks like:</p><pre class="code">\documentclass[11pt]{amsart}
 \usepackage{geometry}   
@@ -141,19 +141,19 @@
 
 <p>As an example, note that this</p>
 
-<p><img src='images/latex/SingleSpaceLines.png' alt='tex file' /></p>
+<p><img alt='tex file' src='images/latex/SingleSpaceLines.png' /></p>
 
 <p>will give you a single line of text:</p>
 
-<p><img src='images/latex/SingleSpaceLinesLaTeX.png' alt='pdf file' /></p>
+<p><img alt='pdf file' src='images/latex/SingleSpaceLinesLaTeX.png' /></p>
 
 <p>But this</p>
 
-<p><img src='images/latex/DoubleSpaceLines.png' alt='tex file' /></p>
+<p><img alt='tex file' src='images/latex/DoubleSpaceLines.png' /></p>
 
 <p>will give you two separate paragraphs:</p>
 
-<p><img src='images/latex/DoubleSpaceLinesLaTeX.png' alt='pdf file' /></p>
+<p><img alt='pdf file' src='images/latex/DoubleSpaceLinesLaTeX.png' /></p>
 
 <p>This is a slightly odd habit to learn, but once you do, it is pretty straightforward. One nice thing is that LaTeX will take care of spacing for you. So you needn&#8217;t worry about indentation. Nor need you make sure you get two spaces after a period and only one after each word; LaTeX treats multiple spaces as if they were one, and it sorts out the spacing to make your lines look right. Additionally, LaTeX reads three or seven or twenty blank lines as if they were one; you do not have to have <em>exactly</em> one blank line between each paragraph, though you must have <em>at least</em> one blank line.</p>
 
@@ -175,11 +175,11 @@
 
 <p>There are some special symbols in LaTeX. If you type a percent sign, for example (%), LaTeX takes that to mean that it should ignore everything that follows on the line. So if my .tex file were to include the following:</p>
 
-<p><img src='images/latex/comment_ex_tex.png' alt='LaTeX fragment' /></p>
+<p><img alt='LaTeX fragment' src='images/latex/comment_ex_tex.png' /></p>
 
 <p>The compiled document would look like this:</p>
 
-<p><img src='images/latex/comment_ex_pdf.jpg' alt='LaTeX fragment' /></p>
+<p><img alt='LaTeX fragment' src='images/latex/comment_ex_pdf.jpg' /></p>
 
 <p>This means the above sample prologue is full of comments LaTeX will ignore. These are simply notes to explain to you what the various commands do and what your options are. LaTeX likewise gives special meaning to curly braces and amperstands. So if you want to type any of these symbols, you must <em>escape</em> them; that is, you must put a backslash directly in front of them: <code>\% \{ \}</code>. Backslashes are a different matter. They are special symbols as well. But if you backslash-escape a backslash (e.g., <code>\\</code>), you will get the symbol for a new line. Instead, if you need to use a backslash you must write <code>\backslash</code>.</p>
 
@@ -272,7 +272,7 @@ The quote text.
 
 <p>BibDesk is straightforward, so I won&#8217;t say too much about it. When you click to create a new reference, you get a nice window like this:</p>
 
-<p><img src='images/latex/bibdesk.png' alt='BibDesk image' /></p>
+<p><img alt='BibDesk image' src='images/latex/bibdesk.png' /></p>
 
 <p>All you have to do is pick a <em>unique</em> cite key for the work, then fill in the publication information, and BibDesk will format the BibTeX file for you. (Notice the little area over on the right: if you drag a pdf file of a paper here, then when you do a search in your bibliography, BibDesk will search within the article. And if you happen to take notes on the pdf using <a href='http://skim-app.sourceforge.net/'>Skim</a>, BibDesk will search those, too.)</p>
 
@@ -378,7 +378,7 @@ Lewis (1986)    `\citet{LewisOPW}`
 
 <p>In TeXShop, to use this functionality, simply start typing your cite command, then hit the F5 key once you type the open curly bracket. (BibDesk needs to be running for this to work; but if it is not open, the most recent version of TeXShop will open it. If you have trouble getting this to work, try opening BibDesk.) You&#8217;ll get a little popup window with your bibliography in it that you can navigate with the up and down arrows. Hit when you get to the entry you want, and TeXShop will stick it in your document. If you start typing part of the name, that will narrow down the list of options. So if I type <code>\citep{Lew</code> and hit F5, I get the following little list:</p>
 
-<p><img src='images/latex/bibdesk_integration.png' alt='image' /></p>
+<p><img alt='image' src='images/latex/bibdesk_integration.png' /></p>
 
 <p>This is, obviously, a quite handy feature. Just select your reference, hit , then type your <code>}</code> and you are done.</p>
 
