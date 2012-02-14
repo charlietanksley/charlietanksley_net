@@ -3,3 +3,4 @@
 b/
 tmp/
 config/deploy.yml
+.rbenv-version
