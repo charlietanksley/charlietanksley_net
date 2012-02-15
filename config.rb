@@ -5,6 +5,7 @@ require 'slim'
 activate :blog
 set :blog_permalink, "blog/:year/:title.html"
 set :blog_layout, "blog_layout"
+# set :blog_layout, "layout"
 set :blog_layout_engine, "slim"
 set :markdown, :layout_engine => :slim
 # set :markdown_engine, :redcarpet

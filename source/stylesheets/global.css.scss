@@ -228,16 +228,13 @@ section {
 #site-nav {
   font-family: $sans;
   text-align: center;
-  font-size: 1.1em;
-  // padding-top: 1em;
   padding-bottom: 1em;
-  // background: white;
   ul {
     @include inline-list;
   }
   a {
     text-decoration: none;
-    padding: 1em; } }
+    padding: 0.5em; } }
 
 #page-nav {
   ol {
