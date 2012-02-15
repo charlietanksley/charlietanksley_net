@@ -1,11 +1,7 @@
 header
   h1 Charlie Tanksley
 
-nav#site-nav
-  ul
-    li <a href='/'>Home</a>
-    li <a href='/#connect'>Connect</a>
-    li <a href='http://www.charlietanksley.net/philtex'>PhilTeX</a>
+== render 'site_navigation'
 
 - data.blog.articles.each do |article|
   article.blogpost
