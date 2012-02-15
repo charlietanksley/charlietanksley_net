@@ -1,3 +1,10 @@
+desc "Build"
+task :build do
+  sh 'b/middleman build'
+  sh 'git add ./'
+  sh "git commit -m 'build'"
+end
+
 desc "Deploy"
 task :deploy do
   puts 'Did you build and commit yet? (y/n)'
