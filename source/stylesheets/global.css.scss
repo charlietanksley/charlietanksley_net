@@ -263,10 +263,43 @@ article.blogpost {
 h2 {
   font-size: 1.5em; }
 h3 {
-  font-size: 1.4em; }
-h4 {
   font-size: 1.3em; }
-h5 {
-  font-size: 1.2em; }
-h6 {
+h4 {
   font-size: 1.1em; }
+
+.right {
+  text-align: right; }
+
+.project, .resume {
+  border-bottom: 1px dotted $highlight; }
+
+.resume {
+  ul {
+    margin-left: 0; }
+  img {
+    display: block;
+    border: 1px solid $lighter;
+    margin: 0 auto 1em; }
+  // I'm not convinced this is a good idea!
+  a {
+    text-decoration: none;
+    &:hover, &:active {
+      text-decoration: underline; } } }
+
+.project {
+  padding-bottom: 1em; }
+
+.text {
+  h2 {
+    text-align: center; } }
+
+dl {
+  margin-left: 1em; }
+
+dt {
+  font-weight: bold; }
+dd {
+  margin-left: 1em; }
+
+.last {
+  border-bottom: none; }
