@@ -270,9 +270,6 @@ h4 {
   .right {
   text-align: right; }
 
-// .project, .resume {
-//   border-bottom: 1px dotted $highlight; }
-
 .resume {
   ul {
     margin-left: 0; }
@@ -285,6 +282,16 @@ h4 {
     text-decoration: none;
     &:hover, &:active {
       text-decoration: underline; } } }
+
+.project, .resume {
+  border-bottom: 1px dotted $highlight; }
+
+.project {
+  margin-bottom: 1em; }
+
+.recent-projects {
+  .project:last-child {
+    border-bottom: none; } } 
 
 .contribution {
   margin-top: 1em; }

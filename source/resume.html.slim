@@ -7,7 +7,7 @@ header
 .body
   == render 'site_navigation'
 
-  .info
+  .right-half
     section.resume.web-presence
       h2 Web Presence
       ul
@@ -28,11 +28,10 @@ header
         li
           a href='http://www.twitter.com/charlietanksley' @charlietanksley
 
-  .work
+  .left-half
     section.resume.recent-projects
       h2 Recent Projects
 
-      /* .half */
       .project
         .description
           h3 Moxie Academy
@@ -85,7 +84,6 @@ header
           == image_tag 'portfolio/fierce-love-homepage-sm.png'
           == image_tag 'portfolio/fierce-love-sales-sm.png'
 
-      /* .half */
       .project
         .description
           h3 Joy Tanksley's Coaching Site
@@ -116,6 +114,17 @@ header
             dd all coding (front-end and back-end), design and graphics 
             dt technologies
             dd MiddleMan (Ruby static site generator), Compass, Sass, Susy 
+
+  .right-half
+    section.resume.work-history
+      h2 Relevant Work History
+      ul
+        li
+          ' Sourcescape
+          ul
+            li December 2011 - February 2012
+
+    /* Development Expertise???? */
 
     section.resume.oss
       h2 OSS Contributions
