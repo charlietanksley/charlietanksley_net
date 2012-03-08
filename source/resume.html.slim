@@ -1,0 +1,109 @@
+- content_for :head do
+  title Charlie Tanksley
+
+header
+  h1 Charlie Tanksley
+  
+.body
+  == render 'site_navigation'
+
+  section.personal-info
+    h2 Personal Information
+    ul
+      li
+        a href='https://github.com/charlietanksley' Github
+      li
+        a href='http://www.charlietanksley.net' Homepage
+      li
+        a href='http://www.charlietanksley.net/blog' General Programming Blog
+      li
+        a href='http://www.charlietanksley.net/philtex' LaTeX Blog
+
+  section.contact
+    h2 Contact
+    ul
+      li
+        == mail_to "charlie.tanksley@gmail.com", 'charlie.tanksley@gmail.com'
+      li
+        a href='http://www.twitter.com/charlietanksley' @charlietanksley
+
+  section.recent-projects
+    h2 Recent Projects
+
+    section.project
+      h3 Moxie Academy
+      p.url 
+        a href='http://www.moxieacademy.com' http://www.moxieacademy.com
+      dl
+        dt description
+        dd Moxie Academy is a front-end for a group coaching program.
+        dt responsibilities
+        dd all coding (front-end and back-end), design and graphics
+        dt technologies
+        dd Ruby, Padrino, Compass, Sass, Susy (responsive framework), DataMapper, Slim
+
+      .screenshots
+        == image_tag 'portfolio/moxie-homepage-sm.png'
+        == image_tag 'portfolio/moxie-lesson-sm.png'
+        == image_tag 'portfolio/moxie-admin-sm.png'
+
+    section.project
+      h3 ThePhilosopher.me
+      p.url 
+        a href='http://www.thephilosopher.me' http://www.thephilosopher.me
+      dl
+        dt description
+        dd A simple website creator for academic philosophers.
+        dt responsibilities
+        dd idea, all coding (front-end and back-end), design and graphics
+        dt technologies
+        dd Ruby, Sinatra, MongoDB, Mongoid, Compass, Sass, Susy, ...
+
+      .screenshots
+        == image_tag 'portfolio/philosopher.me-home-sm.png'
+        == image_tag 'portfolio/philosopher.me-sample-sm.png'
+
+    section.project
+      h3 Fierce Love
+      p.url 
+        a href='http://www.fiercelove.me' http://www.fiercelove.me
+      dl
+        dt description
+        dd A business site for a coaching program.
+        dt responsibilities
+        dd all coding (front-end and back-end), design and graphics (save main logo)
+        dt technologies
+        dd Compass, WordPress, ...
+
+      .screenshots
+        == image_tag 'portfolio/fierce-love-homepage-sm.png'
+        == image_tag 'portfolio/fierce-love-sales-sm.png'
+
+    section.project
+      h3 Joy Tanksley's Coaching Site
+      p.url
+        a href='http://www.joytanksley.com' http://www.joytanksley.com
+      dl
+        dt description
+        dd A business site and blog for a life coach. 
+        dt responsibilities
+        dd all coding (front-end and back-end), design and graphics 
+        dt technologies
+        dd StaticMatic (Ruby static site generator), WordPress, Compass, jQuery 
+
+      .screenshots
+        == image_tag 'portfolio/joytanksley-about-sm.png'
+        == image_tag 'portfolio/joytanksley-blog-sm.png'
+        == image_tag 'portfolio/joytanksley-products-sm.png'
+
+    section.project
+      h3 My Personal Site
+      p.url 
+        a href='http://www.charlietanksley.net' http://www.charlietanksley.net
+      dl
+        dt description
+        dd My personal site. 
+        dt responsibilities
+        dd all coding (front-end and back-end), design and graphics 
+        dt technologies
+        dd MiddleMan (Ruby static site generator), Compass, Sass, Susy 
