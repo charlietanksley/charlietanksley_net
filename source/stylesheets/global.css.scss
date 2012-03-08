@@ -267,11 +267,11 @@ h3 {
 h4 {
   font-size: 1.1em; }
 
-.right {
+  .right {
   text-align: right; }
 
-.project, .resume {
-  border-bottom: 1px dotted $highlight; }
+// .project, .resume {
+//   border-bottom: 1px dotted $highlight; }
 
 .resume {
   ul {
@@ -286,12 +286,8 @@ h4 {
     &:hover, &:active {
       text-decoration: underline; } } }
 
-.project {
-  padding-bottom: 1em; }
-
-.text {
-  h2 {
-    text-align: center; } }
+.contribution {
+  margin-top: 1em; }
 
 dl {
   margin-left: 1em; }
