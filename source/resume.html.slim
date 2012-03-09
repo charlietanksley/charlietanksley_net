@@ -18,7 +18,7 @@ header
         li
           a href='http://www.charlietanksley.net/blog' General Programming Blog
         li
-          a href='http://www.charlietanksley.net/philtex' LaTeX Blog
+          a href='http://www.charlietanksley.net/philtex' LaTeX Blog (group blog)
 
     section.resume.contact
       h2 Contact
@@ -27,6 +27,38 @@ header
           == mail_to "charlie.tanksley@gmail.com", 'charlie.tanksley@gmail.com'
         li
           a href='http://www.twitter.com/charlietanksley' @charlietanksley
+
+    section.resume.skills
+      h2 Development Skills
+
+      h3 Languages
+      ul
+        li Ruby
+
+      h3 Web Frameworks
+      ul
+        li Sinatra
+        li Padrino
+        li Rails
+        li Wordpress
+
+      h3 Markup Languages, Pre-processors, and Tools
+      ul
+        li HTML
+        li CSS
+        li Compass
+        li Sass/Scss
+        li Haml
+        li Slim
+        li Susy (responsive grid)
+        li Goldilocks (responsive framework)
+
+      h3 Development Tools
+      ul
+        li Git
+        li LaTeX (typesetting system)
+        li Rspec (testing framework)
+        li Riot (testing framework)
 
   .left-half
     section.resume.recent-projects
@@ -39,11 +71,11 @@ header
             a href='http://www.moxieacademy.com' http://www.moxieacademy.com
           dl
             dt description
-            dd Moxie Academy is a front-end for a group coaching program.
+            dd Moxie Academy is the front-end for an online course.  The course content includes bith text and videos, so the outward facing site must display both (and the admin interface must allow the adminstrator to interact with both).
             dt responsibilities
-            dd all coding (front-end and back-end), design and graphics
+            dd all coding (front-end and back-end), design, and graphics
             dt technologies
-            dd Ruby, Padrino, Compass, Sass, Susy (responsive framework), DataMapper, Slim
+            dd Ruby, Padrino, Compass, Sass, Susy (responsive framework), DataMapper, Slim, Heroku
 
         .screenshots
           == image_tag 'portfolio/moxie-homepage-sm.png'
@@ -57,11 +89,11 @@ header
             a href='http://www.thephilosopher.me' http://www.thephilosopher.me
           dl
             dt description
-            dd A simple website creator for academic philosophers.
+            dd ThePhilosopher.me was designed with one goal: to enable non-technical people (philosophers!) to create simple, informative, topical personal sites.  Since the most important facts about philosophers are their contact information and publications, this application aims to make it as easy as possible to create a page with both.  The publication data comes from an external source via screen scraping (to obviate the need for time-consuming data entry).
             dt responsibilities
-            dd idea, all coding (front-end and back-end), design and graphics
+            dd idea, all coding (front-end and back-end), design, and graphics
             dt technologies
-            dd Ruby, Sinatra, MongoDB, Mongoid, Compass, Sass, Susy, ...
+            dd Ruby, Sinatra, MongoDB, Mongoid, Compass, Sass, Susy, Haml, Heroku, MongoHQ
 
         .screenshots
           == image_tag 'portfolio/philosopher.me-home-sm.png'
@@ -74,11 +106,11 @@ header
             a href='http://www.fiercelove.me' http://www.fiercelove.me
           dl
             dt description
-            dd A business site for a coaching program.
+            dd Fierce Love is an umbrella site for a series of courses offered by a life-coaching team.  At present, the site is written on top of WordPress.  The current course has lessons that are text, video, and/or audio.  The site uses custom roles to display content to users at the appropriate time in their course.
             dt responsibilities
-            dd all coding (front-end and back-end), design and graphics (save main logo)
+            dd all coding (front-end and back-end), design, and graphics (save main logo)
             dt technologies
-            dd Compass, WordPress, ...
+            dd PHP, WordPress, Compass, Sass
 
         .screenshots
           == image_tag 'portfolio/fierce-love-homepage-sm.png'
@@ -93,9 +125,9 @@ header
             dt description
             dd A business site and blog for a life coach. 
             dt responsibilities
-            dd all coding (front-end and back-end), design and graphics 
+            dd all coding (front-end and back-end), design, and graphics 
             dt technologies
-            dd StaticMatic (Ruby static site generator), WordPress, Compass, jQuery 
+            dd StaticMatic (Ruby static site generator), WordPress, Haml, Compass, Sass, jQuery 
 
         .screenshots
           == image_tag 'portfolio/joytanksley-about-sm.png'
@@ -111,9 +143,9 @@ header
             dt description
             dd My personal site. 
             dt responsibilities
-            dd all coding (front-end and back-end), design and graphics 
+            dd all coding (front-end and back-end), design, and graphics 
             dt technologies
-            dd MiddleMan (Ruby static site generator), Compass, Sass, Susy 
+            dd MiddleMan (Ruby static site generator), Compass, Scss, Goldilocks Responsive Framework, Slim, Whiskey Disk (for deployment)
 
   .right-half
     section.resume.work-history
