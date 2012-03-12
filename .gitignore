@@ -4,3 +4,10 @@ b/
 tmp/
 config/deploy.yml
 .rbenv-version
+
+# LaTeX stuff
+*.aux
+*.bbl
+*.fdb_latexmk
+*.log
+*.out
