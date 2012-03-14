@@ -63,6 +63,10 @@
 \date{\nodate}
 
 % Header information }}}
+% Custom Lists {{{
+\usepackage{enumitem}
+% Custom Lists }}}
+
 
 % Prologue }}}
 \begin{document}
@@ -105,43 +109,28 @@
 \section{Work History} % {{{
 \label{sec:Relevant Work History}
 
-  % Sourcescape {{{
-  \subsection{Sourcescape, Dec.\ 2011--Feb.\ 2012: Part-Time 
-  Internship}
-  \label{sub:Sourcescape}
+\begin{description}[style=nextline]
+  \item[Sourcescape, Dec.\ 2011--Feb.\ 2012: Part-Time Internship] 
+    Wrote tests, refactored, and wrote production code on a Rails 
+    application for a benefits payment/management company.
 
-  \hspace{2em}Wrote tests and code on a Ruby on Rails application for a benefit 
-  payment company.
-  
-  % subsection Sourscape }}}
-  % Clemson {{{
-  \subsection{Clemson University, Aug.\ 2010--Present: Lecturer in 
-  Philosophy}
-  \label{sub:clemson}
+  \item[Clemson University, Aug.\ 2010--Present: Lecturer in 
+    Philosophy]
+    Taught introductory courses in logic and ethics to 140 students 
+    per semester.  Researched possibilty and the relationship between 
+    objects and their parts.
 
-  \hspace{2em}My primary role at Clemson is teaching: I teach 4 sections of PHIL 
-  102: Introduction to Logic per semester.  My secondary role is as a 
-  researcher in philosophy.
+  \item[University of Virgina, Aug.\ 2009--May 2010: Visiting 
+    Researcher]
+    Researched (wrote and delivered papers on) and taught a 400-level, 
+    senior seminar on the persistence of objects through time and the 
+    relationship between objects and their parts.
 
-  % subsection subsection name }}}
-  % UVA {{{
-  \subsection{University of Virgina, Aug.\ 2009--May 2010: Visiting 
-  Researcher}
-  \label{sub:uva}
-
-  \hspace{2em}This was primarily a research position in the Philosophy Department 
-  at the University of Virginia.  I researched the relationship 
-  betweem material objects and the parts that make them up.  In the 
-  spring semester of that year I taught the department's 400-level 
-  senior seminar class (on the material constitution of objects).
-  
-  % subsection University of Virgina, Aug.\ 2009--May 2010: Visiting Re }}}
-
-  \vspace{1em}
+\end{description}
 
 % section Relevant Work History }}}
 \hrule
-\section{Devleopment Skills} % {{{
+\section{Development Skills} % {{{
 \label{sec:Devleopment Skills}
 
 \begin{multicols}{3}
@@ -187,6 +176,7 @@
   \item \LaTeX\ (typesetting system)
   \item Rspec (testing framework)
   \item Riot (testing framework)
+  \item BDD/TDD with Cucumber \& Rspec
 \end{itemize}
 
 % subsection Development Tools }}}
@@ -217,7 +207,7 @@
 
 \begin{description}
   \item[description] Moxie Academy is the front-end for an online 
-    course.  The course content includes bith text and videos, so the 
+    course.  The course content includes both text and videos, so the 
     outward facing site must display both (and the admin interface 
     must allow the adminstrator to interact with both).
   \item[responsibilities] all coding (front-end and back-end), design, and graphics
@@ -230,8 +220,6 @@
 \includegraphics[scale=.5]{../source/images/portfolio/moxie-homepage-sm.png}\\
 \vskip 0.5em
 \includegraphics[scale=.5]{../source/images/portfolio/moxie-lesson-sm.png}\\
-\vskip 0.5em
-\includegraphics[scale=.5]{../source/images/portfolio/moxie-admin-sm.png}\\
 \end{centering}
 \end{multicols}
 
@@ -248,7 +236,7 @@
 \begin{description}
   \item[description] ThePhilosopher.me was designed with one goal: to 
     enable non-technical people (philosophers!) to create simple, 
-    informative, topical personal sites.  Since the most important 
+    informative, topical, personal sites.  Since the most important 
     facts about philosophers are their contact information and 
     publications, this application aims to make it as easy as possible 
     to create a page with both.  The publication data comes from an 
@@ -271,7 +259,7 @@
 
 % subsection ThePhilosopher.me }}}
 % Fierce Love {{{
-\newpage
+% \newpage
 
 \subsection{\href{http://www.fiercelove.me}
   {Fierce Love---www.fiercelove.me}}
@@ -313,8 +301,6 @@
 \columnbreak
 \begin{centering}
 \includegraphics[scale=.5]{../source/images/portfolio/joytanksley-about-sm.png}\\
-\vskip 0.5em
-\includegraphics[scale=.5]{../source/images/portfolio/joytanksley-blog-sm.png}\\
 \vskip 0.5em
 \includegraphics[scale=.5]{../source/images/portfolio/joytanksley-products-sm.png}\\
 \end{centering}
@@ -370,8 +356,8 @@
   \label{sub:rubinius/rubinius}
 
   \begin{itemize}
-    \item2011-10-15 update String#squeeze and #squeeze! specs for 19 (e804060)
-    \item2011-10-15 patch String#squeeze for 19 (7acb876)
+    \item2011-10-15 update String\#squeeze and \#squeeze! specs for 19 (e804060)
+    \item2011-10-15 patch String\#squeeze for 19 (7acb876)
   \end{itemize}
   
   % subsection rubinius/rubinius }}}
